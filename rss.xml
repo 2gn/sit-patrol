@@ -1,5 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0"><channel><title>SIT Patrol (芝浦工業大学 関連リポジトリ)</title><link>https://github.com/2gn/sit-patrol</link><description>芝浦工業大学に関連する新規公開GitHubリポジトリ（OSS）の自動検知フィード</description><lastBuildDate>Wed, 28 Oct 2026 11:29:41 +0000</lastBuildDate><generator>SIT-Patrol</generator><item><title>[新着リポジトリ] InteractiveGraphicsLab/VRanch-Browser</title><link>https://github.com/InteractiveGraphicsLab/VRanch-Browser</link><guid isPermaLink="false">InteractiveGraphicsLab/VRanch-Browser</guid><pubDate>Mon, 06 Dec 2021 16:02:11 +0000</pubDate><author>InteractiveGraphicsLab</author><description>&lt;p&gt;&lt;strong&gt;検知カテゴリ:&lt;/strong&gt; ドメイン検索 (shibaura-it.ac.jp)&lt;/p&gt;&lt;p&gt;&lt;strong&gt;情報:&lt;/strong&gt; 言語: C# | ★ 7&lt;/p&gt;&lt;hr /&gt;&lt;pre style='white-space: pre-wrap; font-family: sans-serif;'&gt;Multi-Window Web Browser with History Tree Visualization for VR
+<rss version="2.0"><channel><title>SIT Patrol (芝浦工業大学 関連リポジトリ)</title><link>https://github.com/2gn/sit-patrol</link><description>芝浦工業大学に関連する新規公開GitHubリポジトリ（OSS）の自動検知フィード</description><lastBuildDate>Wed, 28 Oct 2026 11:37:52 +0000</lastBuildDate><generator>SIT-Patrol</generator><item><title>[新着リポジトリ] 2gn/slib-go</title><link>https://github.com/2gn/slib-go</link><guid isPermaLink="false">2gn/slib-go</guid><pubDate>Sun, 22 Mar 2026 05:44:05 +0000</pubDate><author>2gn</author><description>&lt;p&gt;&lt;strong&gt;検知カテゴリ:&lt;/strong&gt; ドメイン検索 (shibaura-it.ac.jp)&lt;/p&gt;&lt;p&gt;&lt;strong&gt;情報:&lt;/strong&gt; 言語: Go | ★ 0&lt;/p&gt;&lt;hr /&gt;&lt;pre style='white-space: pre-wrap; font-family: sans-serif;'&gt;Crawling CLI utility for slib.shibaura-it.ac.jp
+
+--- README ---
+# slib-go
+
+A powerful, Go-based crawler and terminal interface for the Shibaura Institute of Technology (SIT) library (https://slib.shibaura-it.ac.jp).
+
+`slib-go` is designed for both **AI agents** and **human users**, providing both machine-readable JSON output and a rich, interactive Terminal User Interface (TUI).
+
+## Key Features
+
+- **Concurrent Scraping**: Search both physical library books and online publications (e-books, journals) simultaneously.
+- **Campus Filtering**: Filter search results by campus (Toyosu, Omiya).
+- **Detailed Book Info**: Fetch full bibliographic details including ISBN, publication info, and real-time holdings status.
+- **AI-Friendly**: Output results in clean, structured JSON format for easy integration with AI agents and automation scripts.
+- **Interactive TUI**: A modern, interactive terminal interface for searching, browsing, and viewing book details with ASCII art cover previews (where available).
+
+## Quick Start
+
+### For Humans: Interactive TUI
+
+Launch the interactive interface to search and browse:
+
+```bash
+go run main.go tui
+```
+
+### For AI Agents &amp;amp; Automation: JSON Output
+
+Get structured data for a specific book:
+
+```bash
+go run main.go -json -id BB16343390
+```
+
+## Documentation
+
+Detailed usage instructions and examples can be found in [docs/usage.md](docs/usage.md).
+
+## Compatibility
+
+- Tested on `amd64 linux`.
+- Requires Go 1.21+
+
+## License
+
+(MIT License - or check the repository for details)
+&lt;/pre&gt;</description></item><item><title>[新着リポジトリ] shibaura-hac/sit-linux-wiki</title><link>https://github.com/shibaura-hac/sit-linux-wiki</link><guid isPermaLink="false">shibaura-hac/sit-linux-wiki</guid><pubDate>Sat, 02 May 2026 08:44:15 +0000</pubDate><author>shibaura-hac</author><description>&lt;p&gt;&lt;strong&gt;検知カテゴリ:&lt;/strong&gt; 大学名キーワード検索 (芝浦工業大学)&lt;/p&gt;&lt;p&gt;&lt;strong&gt;情報:&lt;/strong&gt; 言語: CSS | ★ 0&lt;/p&gt;&lt;hr /&gt;&lt;pre style='white-space: pre-wrap; font-family: sans-serif;'&gt;説明なし
+
+--- README ---
+# SIT Linux Users&amp;#x27; Wiki
+
+芝浦工業大学 LinuxユーザーのためのWikiです。
+
+ページのリクエストはissueから、質問はDiscussionでお願いします。
+&lt;/pre&gt;</description></item><item><title>[新着リポジトリ] InteractiveGraphicsLab/VRanch-Browser</title><link>https://github.com/InteractiveGraphicsLab/VRanch-Browser</link><guid isPermaLink="false">InteractiveGraphicsLab/VRanch-Browser</guid><pubDate>Mon, 06 Dec 2021 16:02:11 +0000</pubDate><author>InteractiveGraphicsLab</author><description>&lt;p&gt;&lt;strong&gt;検知カテゴリ:&lt;/strong&gt; ドメイン検索 (shibaura-it.ac.jp)&lt;/p&gt;&lt;p&gt;&lt;strong&gt;情報:&lt;/strong&gt; 言語: C# | ★ 7&lt;/p&gt;&lt;hr /&gt;&lt;pre style='white-space: pre-wrap; font-family: sans-serif;'&gt;Multi-Window Web Browser with History Tree Visualization for VR
 
 --- README ---
 # VRanch-Browser
@@ -1767,32 +1822,4 @@ Windows 10 / Python 3.8.5 / glfw 2.0.0 / matplotlib 3.3.3 / numpy 1.19.3 / openc
 # Den3BlogTool
 芝浦工業大学公認サークル電子計算機研究会ブログ作成用の簡易GUIソフトです。
 
-このプログラムはQtで作成されています。&lt;/pre&gt;</description></item><item><title>[新着リポジトリ] itouyukiko2028/hello-world</title><link>https://github.com/itouyukiko2028/hello-world</link><guid isPermaLink="false">itouyukiko2028/hello-world</guid><pubDate>Wed, 08 Jul 2026 08:35:19 +0000</pubDate><author>itouyukiko2028</author><description>&lt;p&gt;&lt;strong&gt;検知カテゴリ:&lt;/strong&gt; 大学名キーワード検索 (芝浦工業大学)&lt;/p&gt;&lt;p&gt;&lt;strong&gt;情報:&lt;/strong&gt; ★ 0&lt;/p&gt;&lt;hr /&gt;&lt;pre style='white-space: pre-wrap; font-family: sans-serif;'&gt;このリポジトリは GitHub Flow を実行するためのリポジトリです
-
---- README ---
-# hello-world
-このリポジトリは GitHub Flow を実行するためのリポジトリです
-
-芝浦工業大学大学院理工学研究科システム理工学専攻修士一年の伊藤結希子です。
-&lt;/pre&gt;</description></item><item><title>[新着リポジトリ] KataokaNagi/digicredigico</title><link>https://github.com/KataokaNagi/digicredigico</link><guid isPermaLink="false">KataokaNagi/digicredigico</guid><pubDate>Sat, 06 Mar 2021 05:37:14 +0000</pubDate><author>KataokaNagi</author><description>&lt;p&gt;&lt;strong&gt;検知カテゴリ:&lt;/strong&gt; 大学名キーワード検索 (芝浦工業大学)&lt;/p&gt;&lt;p&gt;&lt;strong&gt;情報:&lt;/strong&gt; 言語: HTML | ★ 0&lt;/p&gt;&lt;hr /&gt;&lt;pre style='white-space: pre-wrap; font-family: sans-serif;'&gt;Joking introduction websites of my club invitation page
-
---- README ---
-# digicredigico
-Joking introduction websites.  
-This is made for my club invitation page &amp;amp; &amp;quot;Kuso-Dasa-Grand-Prix&amp;quot;
-
-## Site Link
-[デジクリ デジコのホームページ](https://kataokanagi.github.io/digicredigico/index.html)
-
-[![image](https://user-images.githubusercontent.com/45355440/110201645-84591180-7ea7-11eb-8e9a-637e5b70f948.png)](https://kataokanagi.github.io/digicredigico/index.html)
-
-## License
-Don’ｔ reuse source files.
-
-## Acknowledgements
-I would like to thank their authers.  
-
-* [阿部 寛のホームページ](http://abehiroshi.la.coocan.jp/)
-* [阿部寛と学ぶHTMLチュートリアル](https://qiita.com/Michinosuke/items/ff696189ecd518da3d3a)
-* [芝浦工業大学公認サークルデジクリのホームページ](https://www.google.com/url?sa=t&amp;amp;rct=j&amp;amp;q=&amp;amp;esrc=s&amp;amp;source=web&amp;amp;cd=&amp;amp;cad=rja&amp;amp;uact=8&amp;amp;ved=2ahUKEwjM8J_H-prvAhWJdXAKHQevBHwQFjAAegQIAhAD&amp;amp;url=https%3A%2F%2Fdigicre.net%2F&amp;amp;usg=AOvVaw3lTku9wOD23g0417nXcDiZ)
-&lt;/pre&gt;</description></item></channel></rss>
+このプログラムはQtで作成されています。&lt;/pre&gt;</description></item></channel></rss>
