@@ -1,0 +1,1798 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"><channel><title>SIT Patrol (芝浦工業大学 関連リポジトリ)</title><link>https://github.com/2gn/sit-patrol</link><description>芝浦工業大学に関連する新規公開GitHubリポジトリ（OSS）の自動検知フィード</description><lastBuildDate>Wed, 28 Oct 2026 11:29:41 +0000</lastBuildDate><generator>SIT-Patrol</generator><item><title>[新着リポジトリ] InteractiveGraphicsLab/VRanch-Browser</title><link>https://github.com/InteractiveGraphicsLab/VRanch-Browser</link><guid isPermaLink="false">InteractiveGraphicsLab/VRanch-Browser</guid><pubDate>Mon, 06 Dec 2021 16:02:11 +0000</pubDate><author>InteractiveGraphicsLab</author><description>&lt;p&gt;&lt;strong&gt;検知カテゴリ:&lt;/strong&gt; ドメイン検索 (shibaura-it.ac.jp)&lt;/p&gt;&lt;p&gt;&lt;strong&gt;情報:&lt;/strong&gt; 言語: C# | ★ 7&lt;/p&gt;&lt;hr /&gt;&lt;pre style='white-space: pre-wrap; font-family: sans-serif;'&gt;Multi-Window Web Browser with History Tree Visualization for VR
+
+--- README ---
+# VRanch-Browser
+Multi-Window Web Browser with History Tree Visualization for VR
+
+[![overview](https://user-images.githubusercontent.com/95640923/144898819-8326e0c2-1228-4013-b4dc-5179cc1b309e.jpg)](https://www.youtube.com/watch?v=SD8VkKMeE_s)
+http://www.igl.ise.shibaura-it.ac.jp/projects/2021uist_egawa.html
+
+## Install
+1. Download [VRanchBrowser.apk](https://github.com/RakuEgawa/VRanch-Browser/releases/tag/Demo)
+2. Setup SideQuest and Install the apk file to Quest  
+https://learn.adafruit.com/sideloading-on-oculus-quest/install-and-use-sidequest
+&lt;/pre&gt;</description></item><item><title>[新着リポジトリ] ros2-forest/forest</title><link>https://github.com/ros2-forest/forest</link><guid isPermaLink="false">ros2-forest/forest</guid><pubDate>Wed, 29 Jul 2020 11:45:56 +0000</pubDate><author>ros2-forest</author><description>&lt;p&gt;&lt;strong&gt;検知カテゴリ:&lt;/strong&gt; ドメイン検索 (shibaura-it.ac.jp)&lt;/p&gt;&lt;p&gt;&lt;strong&gt;情報:&lt;/strong&gt; 言語: Python | ★ 26&lt;/p&gt;&lt;hr /&gt;&lt;pre style='white-space: pre-wrap; font-family: sans-serif;'&gt;Automated Integration of High-Level Synthesis FPGA Modules with ROS2 Systems
+
+--- README ---
+# Authors
+
+**Authors:** Daniel Pinheiro Leal (University of Toronto), Midori Sugaya (Shibaura Institute of Technology), Hideharu Amano (Keio University), Takeshi Ohkawa (Tokai University).
+
+**Contact Information:** daniel.leal_at_mail.utoronto.ca and ohkawa.takeshi_at_tokai.ac.jp (Replace \_at\_ with @).
+
+# ROS2 - Forest
+
+**FOrEST** (FPGA-Oriented Easy Synthesizer Tool) is a tool that allows an easy and seamless integration of HLS-generated FPGA logic into [ROS2](https://index.ros.org/doc/ros2/) systems. It automatically generates a ROS2-FPGA node, which can be used to accelerate versatile and robust real-world robot applications.
+
+The diagram of a Forest-generated ROS2-FPGA node is shown below. Forest automatically creates a PYNQ driver to communicate between ROS2 and FPGA, and generates and builds 
+all of the files necessary to encompass the FPGA logic within a ROS2 package, allowing it to be easily accessible to other ROS2 nodes running on the PS part of an FPGA SoC
+or even distributed ROS2 nodes that communicate with the FPGA SoC PS over a network.
+
+![ros2-fpga-node](docs/ros2-fpga-node-png.png)
+
+Below you can see an example of a Forest-generated ROS2 node that makes use of FPGA hardware to perform the MNIST digit recognition task through a convolutional neural network. The output of the FPGA CNN hardware (FPGA prediction) is printed to the terminal by another ROS2 node, which runs on a PC.
+
+![mnist_bnn_gif](docs/mnist_bnn_gif.gif)
+
+## Environment
+
+For the installation of PYNQ and ROS2 Eloquent on the Zynq boards, please refer to the step-by-step [setup guide](https://github.com/ros2-forest/forest/tree/master/docs/setup_guide).
+
+#### PYNQ
+
+Forest runs on [PYNQ version 2.5](https://pynq.readthedocs.io/en/v2.5/index.html).
+
+#### Python
+
+Tested with Python 3.6.
+
+#### Required Python Packages
+
+The following Python packages are required:
+
+`pip3 install numpy jinja2`
+
+#### ROS2
+
+[ROS2 Eloquent](https://index.ros.org/doc/ros2/Installation/Eloquent/Linux-Development-Setup/), built from source.
+
+#### Vivado
+
+Tested with designs from Vivado 2019.1 and Vivado HLS 2019.1.
+
+## Installation
+
+Go through the [Setup Guide](https://github.com/ros2-forest/forest/tree/master/docs/setup_guide) to install PYNQ v2.5 and ROS2 Eloquent, and then get the Forest tool in your Zynq board by cloning the Github repository.
+
+`git clone https://github.com/ros2-forest/forest.git`
+
+## Usage
+
+```
+python3 forest.py [-h] [-t] [-g -i ninputs -o noutputs]
+
+-h or --help: Prints the usage statement for the script
+
+-t or --test: Generates simple talker and listener nodes along with the FPGA ROS node
+
+-g or --genconfig: Generates a template config file to be used by the script
+
+-i or --ninputs: Number of input signals for the template config file
+
+-o or --noutputs: Number of output signals for the template config file
+```
+
+## Tutorial
+
+See the [Getting Started](https://github.com/ros2-forest/forest/tree/master/docs/tutorials) tutorial.
+
+## Examples
+
+1. [Image Processing - Contrast Stretching](https://github.com/ros2-forest/forest/tree/master/examples/contrast_stretch)
+
+2. [Machine Learning - BNN for MNIST digit recognition](https://github.com/ros2-forest/forest/tree/master/examples/mnist_bnn)
+
+3. [Machine Learning - CNN for MNIST digit recognition](https://github.com/ros2-forest/forest/tree/master/examples/mnist_cnn)
+
+# Publications
+
+If you are using or modifying the Forest tool, please cite this GitHub repository and our related publications.
+
+- [1] - D. Pinheiro Leal, M. Sugaya, H. Amano, T. Ohkawa &amp;quot;Automated Integration of High-Level Synthesis FPGA Modules with ROS2 Systems&amp;quot;, International Conference on Field Programmable Technology (FPT), 2020. 
+
+- [2] - D. Pinheiro Leal, M. Sugaya, H. Amano, T. Ohkawa &amp;quot;FPGA Acceleration of ROS2-Based Reinforcement Learning Agents&amp;quot;, CANDAR&amp;#x27;20 - 8th International Workshop on Computer Systems and Architectures (CSA&amp;#x27;20), 2020.
+&lt;/pre&gt;</description></item><item><title>[新着リポジトリ] jsgoecke/rxgrid</title><link>https://github.com/jsgoecke/rxgrid</link><guid isPermaLink="false">jsgoecke/rxgrid</guid><pubDate>Mon, 28 Dec 2009 00:00:24 +0000</pubDate><author>jsgoecke</author><description>&lt;p&gt;&lt;strong&gt;検知カテゴリ:&lt;/strong&gt; ドメイン検索 (shibaura-it.ac.jp)&lt;/p&gt;&lt;p&gt;&lt;strong&gt;情報:&lt;/strong&gt; 言語: Ruby | ★ 4&lt;/p&gt;&lt;hr /&gt;&lt;pre style='white-space: pre-wrap; font-family: sans-serif;'&gt;Ruby lib for pushing jobs to an Xgrid cluster
+
+--- README ---
+h1. rxgrid
+
+h2. Description
+
+Ruby library for publishing OSX Xgrid jobs.
+
+h2. Author
+
+h3. Original Website
+
+&amp;lt;a href=&amp;#x27;http://www.tslab.se.shibaura-it.ac.jp/index.php/Software/rxgrid&amp;#x27;&amp;gt;rxgrid @ www.tslab.se.shibaura-it.ac.jp&amp;lt;/a&amp;gt;&lt;/pre&gt;</description></item><item><title>[新着リポジトリ] minhyeoky/SIT-HYU</title><link>https://github.com/minhyeoky/SIT-HYU</link><guid isPermaLink="false">minhyeoky/SIT-HYU</guid><pubDate>Mon, 29 Jul 2019 02:55:49 +0000</pubDate><author>minhyeoky</author><description>&lt;p&gt;&lt;strong&gt;検知カテゴリ:&lt;/strong&gt; ドメイン検索 (shibaura-it.ac.jp)&lt;/p&gt;&lt;p&gt;&lt;strong&gt;情報:&lt;/strong&gt; 言語: Python | ★ 0&lt;/p&gt;&lt;hr /&gt;&lt;pre style='white-space: pre-wrap; font-family: sans-serif;'&gt;Simple rhythm game with RaspberryPi and ESP-Wroom-32(ESP32)
+
+--- README ---
+# SIT x HYU = ?
+
+**2019.07.22~2019.07.27**
+
+| Minhyeok Lee&amp;lt;&amp;lt;inh0211@hanyang.ac.kr&amp;gt;&amp;gt;             |
+| ------------------------------------------------- |
+| **Changsun Park**&amp;lt;&amp;lt;changsun19991212@gmail.com&amp;gt;&amp;gt;   |
+| **Yixian Geng**&amp;lt;&amp;lt;bp17043@shibaura-it.ac.jp&amp;gt;&amp;gt;      |
+| **Taichi Kashimura**&amp;lt;&amp;lt;bp18030@shibaura-it.ac.jp&amp;gt;&amp;gt; |
+
+
+simple rhythm game with RaspberryPi and ESP-Wroom-32(ESP32)
+
+they play the role of a console and controllers.
+
+they connect via bluetooth.
+
+![image-20190729114948775](http://ww2.sinaimg.cn/large/006tNc79gy1g5gioqlduuj30g00jyaep.jpg)
+
+![image](https://user-images.githubusercontent.com/12870549/62033481-02aef580-b227-11e9-855c-ff7542bc08a9.png)
+
+![image](https://user-images.githubusercontent.com/12870549/62033486-06db1300-b227-11e9-9a39-98c223a47df0.png)
+
+![UNADJUSTEDNONRAW_thumb_a29](http://ww4.sinaimg.cn/large/006tNc79gy1g5gim3v8nqj30lc0sg0wk.jpg)
+
+
+# running
+```bash
+pip3 install -r requirements.txt
+python3 game.py
+```
+&lt;/pre&gt;</description></item><item><title>[新着リポジトリ] kouheisatou/gsot-study-exporter</title><link>https://github.com/kouheisatou/gsot-study-exporter</link><guid isPermaLink="false">kouheisatou/gsot-study-exporter</guid><pubDate>Tue, 17 Mar 2026 15:47:03 +0000</pubDate><author>kouheisatou</author><description>&lt;p&gt;&lt;strong&gt;検知カテゴリ:&lt;/strong&gt; ドメイン検索 (shibaura-it.ac.jp)&lt;/p&gt;&lt;p&gt;&lt;strong&gt;情報:&lt;/strong&gt; 言語: JavaScript | ★ 1&lt;/p&gt;&lt;hr /&gt;&lt;pre style='white-space: pre-wrap; font-family: sans-serif;'&gt;芝浦工大の学修システムS*gsotから成績データをエクスポートするChrome拡張機能
+
+--- README ---
+# GSOT Data Exporter (Chrome Extension)
+
+Chrome拡張から芝浦工業大学 GSOT にログイン済みセッションを利用し、学修関連のXML/JSONを一括取得してZIP保存するツールです。
+
+## 機能
+
+- ポップアップ表示時に GSOT ログイン状態を自動判定
+- 未ログイン時は `https://sgsot.sic.shibaura-it.ac.jp/` を自動で開く
+- ログイン完了URLを検出すると「全てのデータを取得」ボタンを有効化
+- 以下データを取得して1つのZIPにまとめてダウンロード
+  - `Personal.xml`
+  - `StudyHistory.xml`
+  - `Attend.json`
+  - `GPA.xml`
+  - `TOEICBridge.xml`
+  - `FLE.xml`
+  - `PROG.xml`
+  - `Reflection/20252.json`
+  - `ResearchPlan.json`
+
+## 対応するログイン後URL
+
+- `https://sgsot*.sic.shibaura-it.ac.jp/Sgsot/ng/index.html?uid=&amp;lt;uid&amp;gt;`
+- `https://sgsot*.sic.shibaura-it.ac.jp/&amp;lt;uid&amp;gt;/`
+
+## 使い方
+
+1. Chrome の `chrome://extensions` を開く
+2. 「デベロッパーモード」を有効化
+3. 「パッケージ化されていない拡張機能を読み込む」でこのリポジトリを選択
+4. GSOT にログイン
+5. 拡張ポップアップの「全てのデータを取得」をクリック
+
+## 開発
+
+### 構文チェック
+
+```bash
+node --check popup.js
+```
+
+### ファイル構成
+
+- `manifest.json`: 拡張設定（MV3）
+- `popup.html` / `popup.css` / `popup.js`: ポップアップUIと取得ロジック
+- `.github/workflows/release.yml`: リリース用CI/CD
+
+## CI/CD (GitHub Actions)
+
+タグ `v*` を push すると以下を自動実行します。
+
+1. `popup.js` の構文チェック
+2. 拡張ファイルを ZIP 化
+3. Actions Artifact に保存
+4. GitHub Release を作成し、ZIP をアセットとしてアップロード
+
+例:
+
+```bash
+git tag v1.0.1
+git push origin v1.0.1
+```
+&lt;/pre&gt;</description></item><item><title>[新着リポジトリ] IMS-Lab8073/RSNPUnitRemoteControl</title><link>https://github.com/IMS-Lab8073/RSNPUnitRemoteControl</link><guid isPermaLink="false">IMS-Lab8073/RSNPUnitRemoteControl</guid><pubDate>Wed, 09 Dec 2020 08:02:01 +0000</pubDate><author>IMS-Lab8073</author><description>&lt;p&gt;&lt;strong&gt;検知カテゴリ:&lt;/strong&gt; ドメイン検索 (shibaura-it.ac.jp)&lt;/p&gt;&lt;p&gt;&lt;strong&gt;情報:&lt;/strong&gt; 言語: CMake | ★ 2&lt;/p&gt;&lt;hr /&gt;&lt;pre style='white-space: pre-wrap; font-family: sans-serif;'&gt;Remote control system via RSNPUnit
+
+--- README ---
+# RSNPUnitRemoteControl
+
+&amp;lt;h4&amp;gt; 芝浦工業大学 知能機械システム研究室　加藤宏一朗，松日楽　信人&amp;lt;/h4&amp;gt;
+
+2021/01/27 開催のロボットフォーラムで行われる，RSNP遠隔操作デモンストレーション用ソフトウェアページです．  
+
+## [ロボットフォーラムの案内ページ](https://www.shibaura-it.ac.jp/event/nid00001421.html)
+
+## マニュアル/環境について
+### マニュアルおよび仕様書について
+
+以下のマニュアルを用意しています．  
+ - [RSNPユニット操作方法](https://github.com/IMS-Lab8073/RSNPUnitRemoteControl/blob/main/docs/manual.md)
+ - [操作画面マニュアル](https://github.com/IMS-Lab8073/RSNPUnitRemoteControl/blob/main/docs/manual_operation.md)
+ - [Raspberry Piセットアップマニュアル](https://github.com/IMS-Lab8073/RSNPUnitRemoteControl/blob/main/docs/RaspiSetup.md)
+ - [データ仕様](https://github.com/IMS-Lab8073/RSNPUnitRemoteControl/blob/main/docs/Specification.md)
+
+### ユニットの環境
+
+| 項目 | バージョン |
+|:-:|:-:|
+| Linux OS | Rasbian Buster |
+| RSNP LIB | rsnp-robot-api-2.3.0&amp;lt;br&amp;gt;rsnp-fjlib-api-2.3.0 |
+| Java VM | jdk-1.8.0 |
+
+※Ubuntuにも対応しています．必要であれば別途ご連絡ください．  
+
+### 開発環境
+#### RSNPクライアント/RTM RTC開発
+Java，RSNP LIBのバージョンはユニットと同様です．  
+
+| 項目 | バージョン |
+|:-:|:-:|
+| OS | Windows 10 |
+| OpenRTM | 1.2.0 |
+| Python | 2.7/3.7 |
+
+#### ROSパッケージ開発
+
+| 項目 | バージョン |
+|:-:|:-:|
+| Linux OS | Ubuntu 16.04 LTS |
+| ROS | Kinetic |
+
+
+~~~text  
+連絡先：  
+芝浦工業大学 機械機能工学科 知能機械システム研究室  
+〒135-8548 東京都江東区豊洲3-7-5  
+機械工学専攻 修士1年 加藤宏一朗 Koichiro Kato
+TEL:03-5859-8073
+E-mail:md20024@shibaura-it.ac.jp  
+~~~  &lt;/pre&gt;</description></item><item><title>[新着リポジトリ] harsworks/gPBL2021</title><link>https://github.com/harsworks/gPBL2021</link><guid isPermaLink="false">harsworks/gPBL2021</guid><pubDate>Sat, 21 May 2022 09:18:08 +0000</pubDate><author>harsworks</author><description>&lt;p&gt;&lt;strong&gt;検知カテゴリ:&lt;/strong&gt; ドメイン検索 (shibaura-it.ac.jp)&lt;/p&gt;&lt;p&gt;&lt;strong&gt;情報:&lt;/strong&gt; ★ 0&lt;/p&gt;&lt;hr /&gt;&lt;pre style='white-space: pre-wrap; font-family: sans-serif;'&gt;IoT Agricultural Monitoring Application
+
+--- README ---
+**GLOBAL PROJECT BASED LEARNING (gPBL) 2021 | SHIBAURA INSTITUTE OF TECHNOLOGY**
+
+https://www.shibaura-it.ac.jp/en/study/other/
+
+**TITLE:** 
+
+*IoT Agricultural Monitoring Application*
+(gPBL2021 on Network Software)
+
+**CONCEPT:**
+- Monitor sensors on plant crop (humidity, lighting/sunlight, temperature) from different location
+- Save readings in database (Firebase) and can be accessed via website
+- Control system from application or website
+- Send notification to users regarding updates on plant&amp;#x27;s condition
+&lt;/pre&gt;</description></item><item><title>[新着リポジトリ] Ryosuke-123/fNIRS_LateralityIndex_NeurofeedbackSystem</title><link>https://github.com/Ryosuke-123/fNIRS_LateralityIndex_NeurofeedbackSystem</link><guid isPermaLink="false">Ryosuke-123/fNIRS_LateralityIndex_NeurofeedbackSystem</guid><pubDate>Tue, 02 Jan 2024 14:58:50 +0000</pubDate><author>Ryosuke-123</author><description>&lt;p&gt;&lt;strong&gt;検知カテゴリ:&lt;/strong&gt; ドメイン検索 (shibaura-it.ac.jp)&lt;/p&gt;&lt;p&gt;&lt;strong&gt;情報:&lt;/strong&gt; 言語: Java | ★ 0&lt;/p&gt;&lt;hr /&gt;&lt;pre style='white-space: pre-wrap; font-family: sans-serif;'&gt;説明なし
+
+--- README ---
+## &amp;lt;img src=&amp;quot;https://github.com/user-attachments/assets/b08b4b25-d8b4-496e-a42b-170903b08d86&amp;quot; width=&amp;quot;40px&amp;quot;&amp;gt; FNIRS-Based Neurofeeddback System Using Prefrontal Asymmetry &amp;lt;img src=&amp;quot;https://github.com/user-attachments/assets/b08b4b25-d8b4-496e-a42b-170903b08d86&amp;quot; width=&amp;quot;40px&amp;quot;&amp;gt;
+
+![](https://img.shields.io/badge/AndroidStudio-green)
+
+## Publication
+- Journal: IEEE Access
+- Title: Development of an fNIRS-based neurofeedback system to modulate prefrontal asymmetry
+- Authors: Ryosuke Hiyama, Tatsuo Hirata, Hiroki Sato
+- URL: https://ieeexplore.ieee.org/document/10930884
+&amp;lt;br&amp;gt;
+
+## For who want to use this NF App
+In order to conduct a placebo-controlled experiment for you, we developed two applications: an app that provides accurate neurofeedback (NF App) and an app that provides false neurofeedback (Placebo App). The source files for each app can be downloaded from the links below. &amp;lt;br&amp;gt;
+- NF App: [this releases page](https://github.com/Ryosuke-123/fNIRS_LateralityIndex_NeurofeedbackSystem/releases/tag/v1.0.0). &amp;lt;br&amp;gt;
+- Placebo App: [this releases page](https://github.com/Ryosuke-123/fNIRS_LateralityIndex_NeurofeedbackSystem/releases/tag/v1.0.0). &amp;lt;br&amp;gt;
+
+### How to Use
+#### 1. Purchase HOT-2000 and SDK
+- To use the application we developed, you need to purchase the HOT-2000 and the SDK. &amp;lt;br&amp;gt;
+- Purchase HOT-2000 and SDK from NeU Inc. &amp;lt;br&amp;gt;
+
+#### 2. Install the App
+- Place the SDK (.aar file) you purchased in the downloaded project. Then, build the app based on it and install it on your smartphone. &amp;lt;br&amp;gt;
+
+#### 3. Bluetooth pairing with HOT-2000
+- HOT-2000 is attached to the head. &amp;lt;br&amp;gt;
+- Turn on the HOT-2000 power supply. &amp;lt;br&amp;gt;
+- Establish Bluetooth pairing with the HOT-2000 from the Android device setting. &amp;lt;br&amp;gt;
+
+#### 4. Launch the App
+- Find the app icon on your device&amp;#x27;s home screen or app drawer. &amp;lt;br&amp;gt;
+- Tap the icon to open the app.
+
+#### 5. Navigate Through the App
+The app consists of 4 main screens. Here&amp;#x27;s a brief overview of each: &amp;lt;br&amp;gt;
+&amp;lt;p align=&amp;quot;center&amp;quot;&amp;gt;
+    &amp;lt;img src=&amp;quot;https://github.com/user-attachments/assets/e05f45ad-77f2-41e0-8b1d-6501188fd3c0&amp;quot; width=&amp;quot;600px&amp;quot;&amp;gt;
+&amp;lt;/p&amp;gt;
+
+##### Screen 1: Start Screen
+- Tap anywhere on the screen. &amp;lt;br&amp;gt;
+
+##### Screen 2: Experiment Setting Screen
+- Set the &amp;quot;Restの時間&amp;quot; to 30[s], the &amp;quot;Baseline定義時間&amp;quot; to 5[s], the &amp;quot;移動平均の時間幅&amp;quot; to 5[s], and the &amp;quot;NFトレーニング時間&amp;quot; to 30[s], then tap the &amp;quot;次へ&amp;quot; button. &amp;lt;br&amp;gt;
+
+##### Screen 3: Device Connecting Screen
+- Tap the &amp;quot;セッティング開始&amp;quot; button and wait for the progress bar to move all the way to the right. Then, tap the &amp;quot;計測&amp;quot; tab at the top of the screen. &amp;lt;br&amp;gt;
+
+##### Screen 4: Start Experiment Screen
+- Tap the green button to start the experiment. &amp;lt;br&amp;gt;
+
+## Libraries and Licenses
+This projects uses the following libraries. Please ensure that you comply with their respective licenses: &amp;lt;br&amp;gt;
+
+- [Android Support Libraries](https://developer.android.com/topic/libraries/support-library?hl=en) - Licensed under the [Apache License, Version 2.0](https://www.apache.org/licenses/LICENSE-2.0). &amp;lt;br&amp;gt;
+- [SteamSupport (android-retrofuture)](https://sourceforge.net/projects/streamsupport/) - Licensed under the [Apache License, Version 2.0](https://www.apache.org/licenses/LICENSE-2.0). &amp;lt;br&amp;gt;
+- [MPAndroidChart](https://github.com/PhilJay/MPAndroidChart) - Licensed under the [Apache License, Version 2.0](https://www.apache.org/licenses/LICENSE-2.0). &amp;lt;br&amp;gt;
+- [StateProgressBar](https://github.com/kofigyan/StateProgressBar) - Licensed under the [Apache License, Verision 2.0](https://www.apache.org/licenses/LICENSE-2.0). &amp;lt;br&amp;gt;
+- [DataViz](https://github.com/povilaskarvelis/DataViz) - Licensed under the [MIT License](https://opensource.org/license/MIT). &amp;lt;br&amp;gt;
+
+
+## Terms of Use
+- This content is available for research purpose only (non-commercial use).
+- Commercial use is not permitted.
+- This content is licensed under the Creative Commons license &amp;quot;CC BY-NC (Attribution - NonCommercial)&amp;quot;
+- For any inquiries regarding this content, please contact the Sato Laboratory at the Shibaura Institute of Technology. If you wish to use this content for commercial use, you must obtain individual permission.
+- Please note that updates to this content stopped in March 2025 due to the main developer, Ryosuke Hiyama, graduating from the Sato Laboratory.
+- All copyrights belong to Ryosuke Hiyama, Tatsuo Hirata, and Hiroki Sato.
+
+## Contributors &amp;amp; How to Contact
+For any inquiries or feedback, please contact: &amp;lt;br&amp;gt;
+- Lab Member: [Ryosuke Hiyama](), mf23095@shibaura-it.ac.jp &amp;lt;br&amp;gt;
+- Lab Menber: [Tatsuo Hirata](), bn21253@shibaura-it.ac.jp &amp;lt;br&amp;gt;
+- Lab Leader: [Hiroki Sato](), hiroki@shibaura-it.ac.jp &amp;lt;br&amp;gt;
+&lt;/pre&gt;</description></item><item><title>[新着リポジトリ] myah1938/mysite2</title><link>https://github.com/myah1938/mysite2</link><guid isPermaLink="false">myah1938/mysite2</guid><pubDate>Wed, 22 Aug 2018 05:58:57 +0000</pubDate><author>myah1938</author><description>&lt;p&gt;&lt;strong&gt;検知カテゴリ:&lt;/strong&gt; ドメイン検索 (shibaura-it.ac.jp)&lt;/p&gt;&lt;p&gt;&lt;strong&gt;情報:&lt;/strong&gt; 言語: Python | ★ 0&lt;/p&gt;&lt;hr /&gt;&lt;pre style='white-space: pre-wrap; font-family: sans-serif;'&gt;説明なし
+
+--- README ---
+mysite2 is study for chat (tutorial)
+
+email : al15110@shibaura-it.ac.jp
+&lt;/pre&gt;</description></item><item><title>[新着リポジトリ] MogamiTsuchikawa/digicre_tools</title><link>https://github.com/MogamiTsuchikawa/digicre_tools</link><guid isPermaLink="false">MogamiTsuchikawa/digicre_tools</guid><pubDate>Thu, 16 Jul 2020 17:52:39 +0000</pubDate><author>MogamiTsuchikawa</author><description>&lt;p&gt;&lt;strong&gt;検知カテゴリ:&lt;/strong&gt; ドメイン検索 (shibaura-it.ac.jp)&lt;/p&gt;&lt;p&gt;&lt;strong&gt;情報:&lt;/strong&gt; 言語: Python | ★ 0&lt;/p&gt;&lt;hr /&gt;&lt;pre style='white-space: pre-wrap; font-family: sans-serif;'&gt;説明なし
+
+--- README ---
+# Digicre_Tools
+
+デジクリでインフラする上でなんか書いたスクリプトをあげるリポジトリ  
+
+## check_slackmail
+
+登録しているメールアドレスのドメインが@shibaura-it.ac.jpじゃないやつを抽出するスクリプト  &lt;/pre&gt;</description></item><item><title>[新着リポジトリ] Meiryo7743/sbdcg</title><link>https://github.com/Meiryo7743/sbdcg</link><guid isPermaLink="false">Meiryo7743/sbdcg</guid><pubDate>Sun, 28 Jan 2024 06:49:31 +0000</pubDate><author>Meiryo7743</author><description>&lt;p&gt;&lt;strong&gt;検知カテゴリ:&lt;/strong&gt; ドメイン検索 (shibaura-it.ac.jp)&lt;/p&gt;&lt;p&gt;&lt;strong&gt;情報:&lt;/strong&gt; 言語: TypeScript | ★ 2&lt;/p&gt;&lt;hr /&gt;&lt;pre style='white-space: pre-wrap; font-family: sans-serif;'&gt;芝浦工業大学の学バス時刻表データを CSV ファイルに変換するツールです。
+
+--- README ---
+# SIT Bus Data CSV Generator (SBDCG)
+
+芝浦工業大学の[学バス時刻表データ](http://bus.shibaura-it.ac.jp/db/bus_data.json)を
+CSV/JSON ファイルに変換するツールです。
+
+## 使い方
+
+&amp;gt; [!TIP]
+&amp;gt; CSV データの中身については，&amp;lt;http://bus.shibaura-it.ac.jp/developer.html&amp;gt; &amp;gt;
+&amp;gt; **カレンダーデータリファレンス**を参考にしてください。
+
+### (1) Deno を利用する場合
+
+&amp;gt; [!WARNING]
+&amp;gt; あらかじめ [Deno](https://deno.com/) をインストールしている必要があります。
+
+このリポジトリを clone した後，以下のコマンドを実行してください。`csv`
+フォルダーの中に各種 CSV ファイルが生成されます。
+
+```
+deno task csv
+```
+
+CSV ファイルに加えて JSON
+ファイルも出力したい場合は，次のコマンドを実行してください。`csv`
+フォルダーの直下に `busData.json` が生成されます。
+
+```
+deno task json
+```
+
+### (2) 実行ファイルを利用する場合
+
+&amp;gt; [!NOTE]
+&amp;gt; 現在は Windows 用の `exe` ファイルのみを提供しています。
+&amp;gt;
+&amp;gt; また，CSV ファイルとして出力することしかできず，JSON
+&amp;gt; ファイルでの出力には今のところ対応していません。
+
+[Releases](https://github.com/Meiryo7743/sbdcg/releases/latest/)
+のところから，`sbdcg_windows_x86_64.exe`
+をダウンロードしてください。その実行ファイルをダブルクリックすると，`csv`
+フォルダーの中に各種 CSV ファイルが生成されます。
+
+## 実行ファイルの生成
+
+次のコマンドを実行すると，Windows 向けの実行ファイルが生成されます。
+
+```
+deno task exe
+```
+
+## LICENSE
+
+- MIT License (cf. [`LICENSE`](LICENSE))
+&lt;/pre&gt;</description></item><item><title>[新着リポジトリ] MARLON-0808/MARLON-0808</title><link>https://github.com/MARLON-0808/MARLON-0808</link><guid isPermaLink="false">MARLON-0808/MARLON-0808</guid><pubDate>Sun, 03 Nov 2024 13:20:11 +0000</pubDate><author>MARLON-0808</author><description>&lt;p&gt;&lt;strong&gt;検知カテゴリ:&lt;/strong&gt; ドメイン検索 (shibaura-it.ac.jp)&lt;/p&gt;&lt;p&gt;&lt;strong&gt;情報:&lt;/strong&gt; ★ 0&lt;/p&gt;&lt;hr /&gt;&lt;pre style='white-space: pre-wrap; font-family: sans-serif;'&gt;Config files for my GitHub profile.
+
+--- README ---
+- 👋 Hi, I’m @MARLON-0808
+- 👀 I’m interested in General probabilistic theories
+- 🌱 I’m currently learning ...
+- 💞️ I’m looking to collaborate on ...
+- 📫 How to reach me email:mf24004@shibaura-it.ac.jp
+- 😄 Pronouns: ...
+- ⚡ Fun fact: ...
+
+&amp;lt;!---
+MARLON-0808/MARLON-0808 is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+You can click the Preview link to take a look at your changes.
+---&amp;gt;
+&lt;/pre&gt;</description></item><item><title>[新着リポジトリ] yanorei32/better-scomb</title><link>https://github.com/yanorei32/better-scomb</link><guid isPermaLink="false">yanorei32/better-scomb</guid><pubDate>Thu, 16 Dec 2021 08:28:31 +0000</pubDate><author>yanorei32</author><description>&lt;p&gt;&lt;strong&gt;検知カテゴリ:&lt;/strong&gt; ドメイン検索 (shibaura-it.ac.jp)&lt;/p&gt;&lt;p&gt;&lt;strong&gt;情報:&lt;/strong&gt; 言語: JavaScript | ★ 0&lt;/p&gt;&lt;hr /&gt;&lt;pre style='white-space: pre-wrap; font-family: sans-serif;'&gt;This project was made to improve scomb.shibaura-it.ac.jp sites.
+
+--- README ---
+# BetterScomb
+![License](https://img.shields.io/github/license/yanorei32/better-scomb.svg?style=for-the-badge&amp;amp;color=blue)
+![Top Language](https://img.shields.io/github/languages/top/yanorei32/better-scomb.svg?style=for-the-badge)
+
+## What is this
+This project was made to improve scomb.shibaura-it.ac.jp sites.
+
+## How to use
+1. Install [Tampermonkey](https://www.tampermonkey.net/) to your browser.
+1. Download this repository in zip.
+1. Click Tampermonkey Dashboard -&amp;gt; Utilities -&amp;gt; Zip -&amp;gt; Import.
+1. Select downloaded this repository zip file.
+1. Enjoy !
+&lt;/pre&gt;</description></item><item><title>[新着リポジトリ] Creator4511/Summer-internship-resources</title><link>https://github.com/Creator4511/Summer-internship-resources</link><guid isPermaLink="false">Creator4511/Summer-internship-resources</guid><pubDate>Sun, 03 Aug 2025 06:43:19 +0000</pubDate><author>Creator4511</author><description>&lt;p&gt;&lt;strong&gt;検知カテゴリ:&lt;/strong&gt; ドメイン検索 (shibaura-it.ac.jp)&lt;/p&gt;&lt;p&gt;&lt;strong&gt;情報:&lt;/strong&gt; ★ 0&lt;/p&gt;&lt;hr /&gt;&lt;pre style='white-space: pre-wrap; font-family: sans-serif;'&gt;説明なし
+
+--- README ---
+# Summer-internship-resources
+**Europe**
+* CERN, Geneva - https://careers.cern/summer 
+* Institute of Science and Technology, Austria (ISTA) - https://phd.pages.ist.ac.at/isternship/
+* International Atomic Energy Agency, Austria (IAEA) - https://www.iaea.org/about/employment/internships
+* Munich Center for Quantum Science and Technology, Germany (MCQST) - https://www.mcqst.de/support/summer-bachelor-program/
+* Max Planck (Astronomy), Germany - https://www.mpia.de/en/careers/internships/summer
+* Max Planck Institute for Gravitational Physics, Germany - https://www.aei.mpg.de/43630/student-internships-in-gravitational-wave-searches-and-observations/
+* Deutsches Elektronen-Synchotron (DESY), Germany - https://summerstudents.desy.de/
+* Charpak, France - https://www.inde.campusfrance.org/france-excellence-charpak-summer-training-scholarship
+* Aalto Science Institute (AscI), Finland - https://www.aalto.fi/en/aalto-science-institute-asci/aalto-science-institute-international-summer-research-programme
+* ThinkSwiss, Switzerland - https://swissnex.org/india/thinkswiss/
+* Oxford University, UK - https://www.physics.ox.ac.uk/research/summer-internships-undergraduates
+* Cambridge University, UK - https://www.epsrc.group.cam.ac.uk/DLA/internships
+* Helmholtz Zentrum Dresden Rossendorf (HZDR), Germany - https://www.hzdr.de/db/Cms?pNid=2519
+* International Summer Student Program, Helmholtz Graduate School for Hadron and Ion Research &amp;amp; Facility for Anti Proton and Ion Research (HGS-HIRe for FAIR), Germany - https://theory.gsi.de/stud-pro/
+* E3, EPFL School of Engineering, Switzerland - https://eee.epfl.ch/
+* Netherlands Institute for Radio Astronomy (ASTRON), Netherlands - https://www.astron.nl/education/summer-research-programme/
+
+**North America**
+* Dorrit Hoffleit Undergraduate Research Scholarship, Yale, USA - https://astronomy.yale.edu/undergraduate-program/research/dorrit-hoffleit-undergraduate-research-scholarship
+* Exploration Science Summer Intern Programme, Lunar and Planetary Institute, USA - https://www.lpi.usra.edu/exploration_intern/?view=program
+* Caltech, LIGO, USA (application link exclusive to India) - https://www.gw.iucaa.in/ligo-surf-program/
+* Purdue University, USA - https://www.physics.purdue.edu/research/reu/index.html
+* Undergraduate Complexity Reserach, Sante Fe Institute, USA - https://www.santafe.edu/engage/learn/programs/undergraduate-complexity-research
+* Los Alamos National Laboratory, USA - https://lanl.jobs/search/jobdetails/undergraduate-and-graduating-hs-senior-internship---physical-sciences/de4ee075-2832-4857-9fe8-b365fba6a30d?utm_source=handout&amp;amp;utm_medium=print&amp;amp;utm_campaign=2025-hs-physical
+* Glen. T. Seaborg Institute, USA - https://seaborg.llnl.gov/career-opportunities
+* SURF, Caltech, USA - https://sfp.caltech.edu/undergraduate-research/programs/surf
+* Lunar and Planetary Institute, USA - https://www.lpi.usra.edu/lpiintern/
+
+**Asia**
+* Shibaura Institue of Technology, Japan - https://www.shibaura-it.ac.jp/en/study/exchange_programs/research.html#Requirements
+* Okinawa Institute of Science and Technology, Japan - https://www.oist.jp/admissions/research-internship/apply-research-internship
+* University of Tokyo, Japan - https://www.k.u-tokyo.ac.jp/en/education/for_undergraduate/
+* NYU Shanghai, China - https://research.shanghai.nyu.edu/centers-and-institutes/physics/srpp
+
+**Australia**
+
+
+&lt;/pre&gt;</description></item><item><title>[新着リポジトリ] al19129/al19129.github.io</title><link>https://github.com/al19129/al19129.github.io</link><guid isPermaLink="false">al19129/al19129.github.io</guid><pubDate>Mon, 03 Feb 2025 15:11:41 +0000</pubDate><author>al19129</author><description>&lt;p&gt;&lt;strong&gt;検知カテゴリ:&lt;/strong&gt; ドメイン検索 (shibaura-it.ac.jp)&lt;/p&gt;&lt;p&gt;&lt;strong&gt;情報:&lt;/strong&gt; 言語: JavaScript | ★ 0&lt;/p&gt;&lt;hr /&gt;&lt;pre style='white-space: pre-wrap; font-family: sans-serif;'&gt;説明なし
+
+--- README ---
+# al19129.github.io
+
+このリポジトリはAL19129笠松悠太の，卒業論文のための実験に用いたシステムを共有するものである
+
+このシステムは平澤らのシステムから作成した
+https://www.cs.ise.shibaura-it.ac.jp/PRO142/
+&lt;/pre&gt;</description></item><item><title>[新着リポジトリ] tantal-831/PotentialMap</title><link>https://github.com/tantal-831/PotentialMap</link><guid isPermaLink="false">tantal-831/PotentialMap</guid><pubDate>Fri, 26 Nov 2021 07:26:39 +0000</pubDate><author>tantal-831</author><description>&lt;p&gt;&lt;strong&gt;検知カテゴリ:&lt;/strong&gt; ドメイン検索 (shibaura-it.ac.jp)&lt;/p&gt;&lt;p&gt;&lt;strong&gt;情報:&lt;/strong&gt; 言語: Python | ★ 0&lt;/p&gt;&lt;hr /&gt;&lt;pre style='white-space: pre-wrap; font-family: sans-serif;'&gt;RTMコンテスト2021用
+
+--- README ---
+# PotentialMap
+****
+RTMコンテスト2021用  
+芝浦工業大学　谷川朋生  
+****
+連絡先:芝浦工業大学 機械機能工学科知能機械システム研究室  
+〒135‐8548　東京都江東区豊洲3‐7‐5  
+谷川朋生 Tanikawa Tomoki  
+E-mail:ab18097@shibaura-it.ac.jp
+&lt;/pre&gt;</description></item><item><title>[新着リポジトリ] BP22063/BP22063</title><link>https://github.com/BP22063/BP22063</link><guid isPermaLink="false">BP22063/BP22063</guid><pubDate>Fri, 30 Jun 2023 01:51:34 +0000</pubDate><author>BP22063</author><description>&lt;p&gt;&lt;strong&gt;検知カテゴリ:&lt;/strong&gt; ドメイン検索 (shibaura-it.ac.jp)&lt;/p&gt;&lt;p&gt;&lt;strong&gt;情報:&lt;/strong&gt; ★ 0&lt;/p&gt;&lt;hr /&gt;&lt;pre style='white-space: pre-wrap; font-family: sans-serif;'&gt;Config files for my GitHub profile.
+
+--- README ---
+- 👋 Hi, I’m @BP22063.
+- 👀 I’m interested in 3DCG creating and programing.
+- 🌱 I’m currently learning Java and C and blender.
+- 💞️ I’m looking to collaborate on programing.
+- 📫 How to reach me: bp22063@shibaura-it.ac.jp
+
+&amp;lt;!---
+BP22063/BP22063 is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+You can click the Preview link to take a look at your changes.
+---&amp;gt;
+&lt;/pre&gt;</description></item><item><title>[新着リポジトリ] Ryosuke-123/Plugin_to_OpenPOTATo</title><link>https://github.com/Ryosuke-123/Plugin_to_OpenPOTATo</link><guid isPermaLink="false">Ryosuke-123/Plugin_to_OpenPOTATo</guid><pubDate>Sun, 08 Oct 2023 07:50:31 +0000</pubDate><author>Ryosuke-123</author><description>&lt;p&gt;&lt;strong&gt;検知カテゴリ:&lt;/strong&gt; ドメイン検索 (shibaura-it.ac.jp)&lt;/p&gt;&lt;p&gt;&lt;strong&gt;情報:&lt;/strong&gt; 言語: MATLAB | ★ 0&lt;/p&gt;&lt;hr /&gt;&lt;pre style='white-space: pre-wrap; font-family: sans-serif;'&gt;Analysis plug-in for the fNIRS analysis platform &amp;quot;Open POTATo&amp;quot;
+
+--- README ---
+# Motion Artifact Correction Plug-in for &amp;quot;Open POTATo&amp;quot;
+
+---
+
+## Download
+1. Download Open POTATo from this [GitHub Pages](https://github.com/hkwgc/open-potato). &amp;lt;br&amp;gt;
+2. Download Plug-in that we developed from ###. &amp;lt;br&amp;gt;
+
+## Introduction
+　Open POTATo is a platform software that integrates a variety of tools for fNIRS data analysis. Open POTATo performs the analysis by selecting the fNIRS measurement data the setting the analysis method and drawing method. &amp;lt;br&amp;gt;
+　Motion Artifact can significantly influence the quality the recorded optical signals of fNIRS. Therefore, we have developed a plug-in that correct Motion Artifact for Open POTATo. &amp;lt;br&amp;gt;
+
+## Apps
+　The following is a quick overview of the apps. Further documentation is available within the apps themselves.
+
+### Example 1: Motion artifact detection by sobel filter
+![Image 1](docs/example_1.png)
+
+### Example 2: Motion artifact detection by standard deviation of heart rate variability
+
+### Example 3: Baseline shift detection heart rate variability
+![Image 3](docs/example_3.png)
+
+### Example 4: Correction of motion artifact by spline interpolation
+![Image 4](docs/example_4.png)
+
+## References
+[1] Stephanie et al. (2016), &amp;#x27;Thtorial on platform for optical topography analysis tools&amp;#x27;, Neurophotonics, Volume 3. &amp;lt;br&amp;gt;
+
+[2] Sholkmann et al. (2010), &amp;#x27;How to detect and reduce movement artifacts in near-infrared imaging using moving standard deviation and spline interpolation&amp;#x27;, Physiological Measurement, Volume31, pp649-662. &amp;lt;br&amp;gt;
+
+[3] Huang et al. (2022), &amp;#x27;Motion artifact removal and evaluation techiques for functional near-infrared spectroscopy singals: A review&amp;#x27;, Frontiers in Neuroscinece, Volume 5. &amp;lt;br&amp;gt;
+
+## Author
+Name: Ryosuke Hiyama &amp;lt;br&amp;gt;
+Affiliation: Shibaura Institue of Technology, [Applied Brain Science Laboratory](https://sitabsl.com/) &amp;lt;br&amp;gt;
+E-mail: mf23095@shibaura-it.ac.jp &amp;lt;br&amp;gt;
+&lt;/pre&gt;</description></item><item><title>[新着リポジトリ] af12066/notify-printer-status</title><link>https://github.com/af12066/notify-printer-status</link><guid isPermaLink="false">af12066/notify-printer-status</guid><pubDate>Mon, 06 Feb 2017 11:13:22 +0000</pubDate><author>af12066</author><description>&lt;p&gt;&lt;strong&gt;検知カテゴリ:&lt;/strong&gt; ドメイン検索 (shibaura-it.ac.jp)&lt;/p&gt;&lt;p&gt;&lt;strong&gt;情報:&lt;/strong&gt; 言語: JavaScript | ★ 0&lt;/p&gt;&lt;hr /&gt;&lt;pre style='white-space: pre-wrap; font-family: sans-serif;'&gt;プリンタステータス通知 Chrome Extension
+
+--- README ---
+# notify-printer-status
+プリンタステータス通知 Chrome Extension
+
+## 使い方
+
+### ソースコードを使用する
+
+Repo を任意のディレクトリに Clone してください。
+
+```
+$ git clone https://github.com/af12066/notify-printer-status.git
+```
+
+Chrome 拡張機能の Developer Mode を有効にし、&amp;quot;Load unpack extension...&amp;quot; から Clone したディレクトリを参照します。
+
+&amp;lt;http://yspl2.sic.shibaura-it.ac.jp/stat_y.shtml&amp;gt; にアクセスするだけで、Extension が動作します。
+
+## ライセンス
+
+MIT
+&lt;/pre&gt;</description></item><item><title>[新着リポジトリ] IMS-Lab8073/RSNPTutorial2020</title><link>https://github.com/IMS-Lab8073/RSNPTutorial2020</link><guid isPermaLink="false">IMS-Lab8073/RSNPTutorial2020</guid><pubDate>Thu, 03 Sep 2020 02:35:59 +0000</pubDate><author>IMS-Lab8073</author><description>&lt;p&gt;&lt;strong&gt;検知カテゴリ:&lt;/strong&gt; ドメイン検索 (shibaura-it.ac.jp)&lt;/p&gt;&lt;p&gt;&lt;strong&gt;情報:&lt;/strong&gt; 言語: Python | ★ 0&lt;/p&gt;&lt;hr /&gt;&lt;pre style='white-space: pre-wrap; font-family: sans-serif;'&gt;RSPN Tutorial2020用
+
+--- README ---
+# RSNP チュートリアル2020
+&amp;lt;h4&amp;gt; 芝浦工業大学 知能機械システム研究室　加藤宏一朗，松日楽　信人&amp;lt;/h4&amp;gt;
+
+2020/09/16開催のRSNPチュートリアルでの，RSNPユニット実習用ページです．
+
+以下のページにてセッティング方法，デモ内容を公開しています．
+
+ - [デモ内容](https://ims-lab8073.github.io/RSNPTutorial2020/)
+ - [事前セッティング方法](https://ims-lab8073.github.io/RSNPTutorial2020/Setting)
+
+
+~~~text  
+連絡先：  
+芝浦工業大学 機械機能工学科 知能機械システム研究室  
+〒135-8548 東京都江東区豊洲3-7-5  
+機械工学専攻 修士1年 加藤宏一朗 Koichiro Kato
+TEL:03-5859-8073
+E-mail:md20024@shibaura-it.ac.jp  
+~~~  &lt;/pre&gt;</description></item><item><title>[新着リポジトリ] Kazuya0606/Red-Demon</title><link>https://github.com/Kazuya0606/Red-Demon</link><guid isPermaLink="false">Kazuya0606/Red-Demon</guid><pubDate>Sun, 12 Nov 2023 21:00:40 +0000</pubDate><author>Kazuya0606</author><description>&lt;p&gt;&lt;strong&gt;検知カテゴリ:&lt;/strong&gt; ドメイン検索 (shibaura-it.ac.jp)&lt;/p&gt;&lt;p&gt;&lt;strong&gt;情報:&lt;/strong&gt; 言語: HTML | ★ 0&lt;/p&gt;&lt;hr /&gt;&lt;pre style='white-space: pre-wrap; font-family: sans-serif;'&gt;説明なし
+
+--- README ---
+# Red-Demon
+
+# GitHub : https://kazuya0606.github.io/Red-Demon/
+
+Brainstrom : https://trello.com/b/kFnTf21S/brainstoring
+
+Pitch Slide : https://docs.google.com/presentation/d/1tkIJhdwSe-QOia6rUH7TNkds_N9Y96EBZ-Y1RYrdLtI/edit#slide=id.g29a04a8251e_0_45
+
+Pitch Video : https://youtu.be/LpTj_qDSS5Y?feature=shared
+
+Scrum Board : https://trello.com/b/vk6WEv2R/scrum-board
+
+Burndown Chart : https://shibaura3-my.sharepoint.com/:x:/g/personal/bv21028_sic_shibaura-it_ac_jp/EWPBdkyHqy9LvEld47sRzOQBLVudQkZAXjBphzypxyfGMA
+
+Narrative Synopsis : https://docs.google.com/document/d/1AYcjkPQHCL1SXYZ3nxChCL20DbzlsOMgMYkxiDXPY_4/edit
+
+Character profile : https://docs.google.com/document/d/1_It7uuGtchbyV7acZ_by7Q5Fubu8eFCJWtbRRaALaaQ/edit
+
+Level Summaries : https://docs.google.com/document/d/1FNri2_G8LF9CY8O6xr_ucBCPrR0wZuishcSfnb6jZr8/edit?pli=1
+
+Branching Map : 
+
+Beat Chart : https://docs.google.com/spreadsheets/d/1VXyGFVuyuy-G4gLd2ZH-CWS9wXW3aFjOufMeoV9hQW8/edit?hl=JA#gid=0
+&lt;/pre&gt;</description></item><item><title>[新着リポジトリ] koichirokato/HumanFollwingSystem</title><link>https://github.com/koichirokato/HumanFollwingSystem</link><guid isPermaLink="false">koichirokato/HumanFollwingSystem</guid><pubDate>Mon, 07 Oct 2019 07:44:30 +0000</pubDate><author>koichirokato</author><description>&lt;p&gt;&lt;strong&gt;検知カテゴリ:&lt;/strong&gt; ドメイン検索 (shibaura-it.ac.jp)&lt;/p&gt;&lt;p&gt;&lt;strong&gt;情報:&lt;/strong&gt; 言語: Python | ★ 0&lt;/p&gt;&lt;hr /&gt;&lt;pre style='white-space: pre-wrap; font-family: sans-serif;'&gt;HumanFollwingSystem for RTMcontest2019
+
+--- README ---
+&amp;lt;h1&amp;gt;HumanFollwingSystem&amp;lt;/h1&amp;gt;
+
+&amp;lt;h2&amp;gt;「追従中の人の軌跡を予測するRTC」&amp;lt;/h2&amp;gt;
+  
+本システムは次の5つのRTCから構成されています．  
+
+- URG RTC
+  - URG-04LXのセンサデータを取得するRTC
+- Kinect RTC
+  - Xtion Pro Live のセンサデータを取得するRTC
+- object_tracking_concierge RTC
+  - センサデータから人の位置を計算し台車に速度指令を送るRTC
+- Concierge_Type3_verOLD RTC
+  - 速度指令を受け取り，移動台車を動かすRTC
+- TrajectoryPrediction RTC
+  - 今回開発した追従対象者の軌跡を予測するRTC
+
+概要は以下にあります．  
+https://github.com/koichirokato/HumanFollwingSystem/blob/master/HumanFollowingSystemPPT.pptx  
+
+詳細なマニュアルは以下にあります．  
+https://github.com/koichirokato/HumanFollwingSystem/blob/master/user_manual.md  
+
+RTCのソースコードは以下にあります．  
+https://github.com/koichirokato/HumanFollwingSystem/tree/master/workspace  
+
+変更履歴は以下にあります．  
+https://github.com/koichirokato/HumanFollwingSystem/releases  
+
+****
+連絡先：
+芝浦工業大学 機械機能工学科 知能機械システム研究室  
+〒135-8548 東京都江東区豊洲3-7-5  
+加藤　宏一朗 Koichiro Kato  
+E-mail : ab16035@shibaura-it.ac.jp  
+
+東京女子大学 数理科学科 加藤研究室  
+〒167-8585 東京都杉並区善福寺2-6-1  
+赤羽根 里奈 Rina Akabane  
+E-mail : d19m201@cis.twcu.ac.jp  &lt;/pre&gt;</description></item><item><title>[新着リポジトリ] nb23506-FahrurAslamiSujiwo-Faru/rPPG_raw_signal</title><link>https://github.com/nb23506-FahrurAslamiSujiwo-Faru/rPPG_raw_signal</link><guid isPermaLink="false">nb23506-FahrurAslamiSujiwo-Faru/rPPG_raw_signal</guid><pubDate>Wed, 19 Feb 2025 10:37:04 +0000</pubDate><author>nb23506-FahrurAslamiSujiwo-Faru</author><description>&lt;p&gt;&lt;strong&gt;検知カテゴリ:&lt;/strong&gt; ドメイン検索 (shibaura-it.ac.jp)&lt;/p&gt;&lt;p&gt;&lt;strong&gt;情報:&lt;/strong&gt; ★ 0&lt;/p&gt;&lt;hr /&gt;&lt;pre style='white-space: pre-wrap; font-family: sans-serif;'&gt;説明なし
+
+--- README ---
+# Investigating the Effectiveness of Filter in rPPG Methods Across Various Skin Tones
+
+## Authors
+Fahrur Aslami\* · Peeraya Sripian†  
+1. Shibaura Institute of Technology, Tokyo, Japan  
+\* Corresponding author: nb23506@shibaura-it.ac.jp  
+† JSKE Member
+
+## Abstract
+This study evaluates the effectiveness of Elliptic, Chebyshev1, and Butterworth filters in remote photoplethysmography (rPPG) signal processing across various skin tones. Using video recordings and fingertip PPG from 19 subjects of diverse ethnic backgrounds, signals were extracted and filtered. Results show that the Elliptic filter yielded the best performance (RMSE: 1.751, SNR: 5.536), followed by Chebyshev1 and Butterworth. Among rPPG methods, ICA and PCA showed the highest accuracy. The study highlights the importance of selecting appropriate filters and methods to ensure accurate heart rate estimation across different skin tones.
+
+## Keywords
+Remote Photoplethysmography (rPPG) · Signal Filter · Skin Tone · Heart Rate · ICA · PCA
+
+## Highlights
+- **Purpose**: Investigates filter performance (Elliptic, Chebyshev1, Butterworth) on rPPG signal quality.
+- **Subjects**: 19 participants, ages 20–32, with diverse skin tones.
+- **Methodology**: Facial ROI extracted from video; signals filtered and analyzed for RMSE &amp;amp; SNR.
+- **Findings**: Elliptic filter had best performance; ICA and PCA were most accurate rPPG methods.
+- **Implication**: Enhancing rPPG robustness across skin tones is crucial for inclusive remote health monitoring.
+
+## Dataset &amp;amp; Preprocessing
+- Facial video data recorded using webcam.
+- Finger-tip PPG data used as ground truth.
+- Face detection and signal extraction via ROI on each frame.
+- Applied filters: Butterworth, Chebyshev1, Elliptic.
+  
+
+## Results
+| Filter      | RMSE  | SNR   |
+|-------------|-------|-------|
+| Elliptic    | 1.751 | 5.536 |
+| Chebyshev1  | 1.768 | 3.066 |
+| Butterworth | 3.411 | 1.699 |
+
+## Citation
+```bibtex
+@article{aslami202Xfilter,
+  title={Investigating the Effectiveness of Filter in rPPG Methods Across Various Skin Tones},
+  author={Aslami, Fahrur and Sripian, Peeraya},
+  journal={Journal of [TBD]},
+  year={20XX},
+  publisher={J-STAGE},
+  note={Advance online publication}
+}
+&lt;/pre&gt;</description></item><item><title>[新着リポジトリ] fankeeper/ImageProcess</title><link>https://github.com/fankeeper/ImageProcess</link><guid isPermaLink="false">fankeeper/ImageProcess</guid><pubDate>Thu, 26 Oct 2017 09:49:21 +0000</pubDate><author>fankeeper</author><description>&lt;p&gt;&lt;strong&gt;検知カテゴリ:&lt;/strong&gt; ドメイン検索 (shibaura-it.ac.jp)&lt;/p&gt;&lt;p&gt;&lt;strong&gt;情報:&lt;/strong&gt; 言語: C++ | ★ 0&lt;/p&gt;&lt;hr /&gt;&lt;pre style='white-space: pre-wrap; font-family: sans-serif;'&gt;説明なし
+
+--- README ---
+
+###folder introduction
+
+- src folder consists all of the source code and make file
+- img folder consists all img files(include source img and processed img)
+- exectable folder consists exectable program
+
+###about how to test
+
+You can download all these files into your personal computer for testing.
+
+- cd to src folder, input &amp;quot;make all&amp;quot; in your terminal
+- cd to executable folder, input &amp;quot;./try&amp;quot; in your terminal
+- then you can get a final img under img folder
+
+###about future version
+
+- suitbale for all size img
+- add some new function
+
+###reference
+
+- http://paulbourke.net/dataformats/bitmaps/
+- https://web.archive.org/web/20080912171714/http://www.fortunecity.com/skyscraper/windows/364/bmpffrmt.html
+- https://www.cnblogs.com/Matrix_Yao/archive/2009/12/02/1615295.html
+- http://www.cnblogs.com/eniac12/p/5329396.html
+
+###contact
+
+If you have any problem about the code,  contact me without a hesitate.
+
+- mail @ ma17129 at shibaura-it.ac.jp
+- Wechat @ fankeeper
+&lt;/pre&gt;</description></item><item><title>[新着リポジトリ] sasa-git/HDL_practice</title><link>https://github.com/sasa-git/HDL_practice</link><guid isPermaLink="false">sasa-git/HDL_practice</guid><pubDate>Tue, 10 Dec 2019 08:24:18 +0000</pubDate><author>sasa-git</author><description>&lt;p&gt;&lt;strong&gt;検知カテゴリ:&lt;/strong&gt; ドメイン検索 (shibaura-it.ac.jp)&lt;/p&gt;&lt;p&gt;&lt;strong&gt;情報:&lt;/strong&gt; 言語: Verilog | ★ 0&lt;/p&gt;&lt;hr /&gt;&lt;pre style='white-space: pre-wrap; font-family: sans-serif;'&gt;Verilogの練習
+
+--- README ---
+# Verilog とは
+
+Verilog（ヴェリログ）は、IEEE 1364 として標準化されているハードウェア記述言語（Hardware Description Language; HDL）である。 ~~by Wikipedia~~
+
+# インストール
+
+Verilog を動かすには Icarus を、波形を表示するには GTKwave が必要になる
+
+[Windows](http://altmo.html.xdomain.jp/src_00/2015_0100/00.html)
+
+[Mac](https://tech.sairilab.com/2018/09/macdeverilogno-kai-fa-huan-jing-gou-zhu/)
+
+[Linux](#) ~~調べてないやググってね~~
+
+# Verilog の使い方
+
+1. 必要なモジュール・シミュレート用モジュールを書く
+1. `$ iverilog -o adder.out adder.v adder_tp.v`でコンパイル(この時、 -s オプションで，トップモジュール名を指定します。 -s オプションは省略可能であるが，作者は -s オプションにてトップモジュール名を明記することを奨励しています。)
+1. `vpp`コマンドでシミュレーションの実行 `$ vvp adder.out`
+   ここで、
+
+```
+# adder.v
+initial begin
+$monitor( $stime, &amp;quot; a=%h b=%h q=%h&amp;quot;,a,b,q);
+$dumpfile(&amp;quot;tb_Prpg10.vcd&amp;quot;); # 出力するvcdファイル
+$dumpvars(0, adder); # 波形表示させるモジュールを指定
+end
+```
+
+のように\$dumpfile / \$dumpvars を入れないとのちにつかう vcd ファイルが出力されないから注意！
+
+4. `$ gtkwave tb_Prpg10.vcd`で波形を表示だ！
+
+## 参考サイト
+
+[いい感じの入門サイト](http://cas.eedept.kobe-u.ac.jp/~arai/Verilog/index.html)
+
+http://cas.eedept.kobe-u.ac.jp/~arai/Verilog/chap4.html
+
+https://sites.google.com/site/methingh/fpga-asic-bei-wang-lu/-gktwave-no-shi-yong-fang-fa
+
+http://www.usamilab.ise.shibaura-it.ac.jp/adv1a-fpga-tutorial/docs/intro-02/
+
+http://altmo.html.xdomain.jp/src_00/2015_0100/00.html
+
+https://tech.sairilab.com/2018/09/macdeverilogno-kai-fa-huan-jing-gou-zhu/
+
+[Icarus のダウンロードサイト](http://bleyer.org/icarus/)
+&lt;/pre&gt;</description></item><item><title>[新着リポジトリ] fpms-project/fpms-server</title><link>https://github.com/fpms-project/fpms-server</link><guid isPermaLink="false">fpms-project/fpms-server</guid><pubDate>Fri, 20 Dec 2019 06:44:05 +0000</pubDate><author>fpms-project</author><description>&lt;p&gt;&lt;strong&gt;検知カテゴリ:&lt;/strong&gt; ドメイン検索 (shibaura-it.ac.jp)&lt;/p&gt;&lt;p&gt;&lt;strong&gt;情報:&lt;/strong&gt; 言語: Scala | ★ 0&lt;/p&gt;&lt;hr /&gt;&lt;pre style='white-space: pre-wrap; font-family: sans-serif;'&gt;A server side program for a package manager which is calculated the set of indirectly-depending packages.
+
+--- README ---
+fpms-server
+---
+
+**fpms-server** is a server side program for a package manager which is calculated the set of indirectly-depending packages.
+
+The client of this is [here](https://www.npmjs.com/package/fpms-client).
+
+# How to start the server
+
+## requirements
+
+- redis
+- postgres
+
+## preparation
+
+- copy `src/main/resources/app_example.conf` to `src/main/resources/app.conf` and modify it 
+- generate json data by [this script](https://github.com/sh4869/get-all-package-info) and put it into the directly 
+specified in app.conf (`json.jsondir`)
+- run `sbt &amp;quot;project calculator&amp;quot; run prepare --convert` for saving packge data into postgres
+
+## Start server
+
+
+* server 
+
+```bash
+sbt &amp;quot;project server&amp;quot; run
+```
+
+* calculator
+
+```bash
+sbt &amp;quot;project calculator&amp;quot; run init
+```
+
+# API
+
+- HOST: `http://fpms-server.cs.ise.shibaura-it.ac.jp`
+
+## `/calculated/$name`
+
+returns the calculated `$name` package.
+
+### optional query
+
+- `range`: version range, see also [semver.npmjs.com](https://semver.npmjs.com/)
+
+### response example
+
+```json
+{
+  &amp;quot;target&amp;quot;: {
+    &amp;quot;name&amp;quot;: &amp;quot;react&amp;quot;,
+    &amp;quot;version&amp;quot;: &amp;quot;17.0.1&amp;quot;,
+    &amp;quot;dep&amp;quot;: {
+      &amp;quot;loose-envify&amp;quot;: &amp;quot;^1.1.0&amp;quot;,
+      &amp;quot;object-assign&amp;quot;: &amp;quot;^4.1.1&amp;quot;
+    },
+    &amp;quot;shasum&amp;quot;: &amp;quot;6e0600416bd57574e3f86d92edba3d9008726127&amp;quot;,
+    &amp;quot;integrity&amp;quot;: &amp;quot;sha512-lG9c9UuMHdcAexXtigOZLX8exLWkW0Ku29qPRU8uhF2R9BN96dLCt0psvzPLlHc5OWkgymP3qwTRgbnw5BKx3w==&amp;quot;
+  },
+  &amp;quot;packages&amp;quot;: [
+    {
+      &amp;quot;name&amp;quot;: &amp;quot;object-assign&amp;quot;,
+      &amp;quot;version&amp;quot;: &amp;quot;4.1.1&amp;quot;,
+      &amp;quot;dep&amp;quot;: {},
+      &amp;quot;shasum&amp;quot;: &amp;quot;2109adc7965887cfc05cbbd442cac8bfbb360863&amp;quot;,
+      &amp;quot;integrity&amp;quot;: &amp;quot;&amp;quot;
+    },
+    {
+      &amp;quot;name&amp;quot;: &amp;quot;loose-envify&amp;quot;,
+      &amp;quot;version&amp;quot;: &amp;quot;1.4.0&amp;quot;,
+      &amp;quot;dep&amp;quot;: {
+        &amp;quot;js-tokens&amp;quot;: &amp;quot;^3.0.0 || ^4.0.0&amp;quot;
+      },
+      &amp;quot;shasum&amp;quot;: &amp;quot;71ee51fa7be4caec1a63839f7e682d8132d30caf&amp;quot;,
+      &amp;quot;integrity&amp;quot;: &amp;quot;sha512-lyuxPGr/Wfhrlem2CL/UcnUc1zcqKAImBDzukY7Y5F/yQiNdko6+fRLevlw1HgMySw7f611UIY408EtxRSoK3Q==&amp;quot;
+    },
+    {
+      &amp;quot;name&amp;quot;: &amp;quot;js-tokens&amp;quot;,
+      &amp;quot;version&amp;quot;: &amp;quot;4.0.0&amp;quot;,
+      &amp;quot;dep&amp;quot;: {},
+      &amp;quot;shasum&amp;quot;: &amp;quot;19203fb59991df98e3a287050d4647cdeaf32499&amp;quot;,
+      &amp;quot;integrity&amp;quot;: &amp;quot;sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==&amp;quot;
+    }
+  ]
+}
+```
+
+## `POST /add`
+
+added packages to the server.
+
+### body format
+
+```
+{
+  &amp;quot;id&amp;quot;: 0, // always 0
+  &amp;quot;name&amp;quot;: &amp;quot;package_name&amp;quot;, // package name 
+  &amp;quot;version&amp;quot;: &amp;quot;0.0.0&amp;quot;, // semantic version
+  &amp;quot;deps&amp;quot;: {}, // deps of packages
+  &amp;quot;shasum&amp;quot;: &amp;quot;&amp;quot; // shasum of package. It can get in npm or yarn api.
+}
+```&lt;/pre&gt;</description></item><item><title>[新着リポジトリ] IMS-Lab8073/RobotShowCase</title><link>https://github.com/IMS-Lab8073/RobotShowCase</link><guid isPermaLink="false">IMS-Lab8073/RobotShowCase</guid><pubDate>Mon, 12 Jul 2021 09:50:42 +0000</pubDate><author>IMS-Lab8073</author><description>&lt;p&gt;&lt;strong&gt;検知カテゴリ:&lt;/strong&gt; ドメイン検索 (shibaura-it.ac.jp)&lt;/p&gt;&lt;p&gt;&lt;strong&gt;情報:&lt;/strong&gt; 言語: Python | ★ 0&lt;/p&gt;&lt;hr /&gt;&lt;pre style='white-space: pre-wrap; font-family: sans-serif;'&gt;7/30のロボットショーケース用のリポジトリです
+
+--- README ---
+# RobotShowCase
+
+&amp;lt;h4&amp;gt; 芝浦工業大学 知能機械システム研究室　加藤宏一朗，松日楽　信人&amp;lt;/h4&amp;gt;
+
+2021/07/30 開催のロボットショーケースで行われる，RSNP遠隔操作デモンストレーション用ソフトウェアページです．  
+
+## [ロボットショーケースの案内ページ](https://www.mext.go.jp/a_menu/universal/mext_01601.html)
+
+## マニュアル/環境について
+### マニュアルおよび仕様書について
+
+以下のマニュアルを用意しています．  
+ - [RSNPユニット操作方法](https://github.com/IMS-Lab8073/RobotShowCase/blob/main/docs/RSNPUnitmanual.md)
+ - [Raspberry Piセットアップマニュアル](https://github.com/IMS-Lab8073/RobotShowCase/blob/main/docs/RaspiSetup.md)
+ - [データ仕様](https://github.com/IMS-Lab8073/RobotShowCase/blob/main/docs/Specification.md)
+
+### ユニットの環境
+
+| 項目 | バージョン |
+|:-:|:-:|
+| Linux OS | Rasbian Buster |
+| RSNP LIB | rsnp-robot-api-2.3.0&amp;lt;br&amp;gt;rsnp-fjlib-api-2.3.0 |
+| Java VM | jdk-1.11.0 |
+
+※Ubuntuにも対応しています．必要であれば別途ご連絡ください．  
+
+### 開発環境
+#### RSNPクライアント開発
+
+| 項目 | バージョン |
+|:-:|:-:|
+| OS | Windows 10 |
+| RSNP LIB | rsnp-robot-api-2.3.0&amp;lt;br&amp;gt;rsnp-fjlib-api-2.3.0 |
+| Java VM | jdk-1.11.0 |
+
+
+~~~text  
+連絡先：  
+芝浦工業大学 機械機能工学科 知能機械システム研究室  
+〒135-8548 東京都江東区豊洲3-7-5  
+機械工学専攻 修士2年 加藤宏一朗 Koichiro Kato
+TEL:03-5859-8073
+E-mail:md20024@shibaura-it.ac.jp  
+~~~  &lt;/pre&gt;</description></item><item><title>[新着リポジトリ] saka-naname/Scombetter</title><link>https://github.com/saka-naname/Scombetter</link><guid isPermaLink="false">saka-naname/Scombetter</guid><pubDate>Mon, 28 Mar 2022 13:18:43 +0000</pubDate><author>saka-naname</author><description>&lt;p&gt;&lt;strong&gt;検知カテゴリ:&lt;/strong&gt; ドメイン検索 (shibaura-it.ac.jp)&lt;/p&gt;&lt;p&gt;&lt;strong&gt;情報:&lt;/strong&gt; 言語: JavaScript | ★ 2&lt;/p&gt;&lt;hr /&gt;&lt;pre style='white-space: pre-wrap; font-family: sans-serif;'&gt;Scombの見た目をちょっとだけいい感じにするChrome拡張機能
+
+--- README ---
+# Scombetter
+
+Scombの見た目をいい感じに整えるChrome拡張機能
+
+この拡張機能はScombZ([https://scombz.shibaura-it.ac.jp/](https://scombz.shibaura-it.ac.jp/))上のみで動作します。
+
+## 主な機能
+### ポータルメニュー
+- 未読のお知らせを青文字でハイライトする
+### サイドメニュー
+- メニューやロゴをホバー時に明るくする
+- アイコンの位置を整える
+- 「サイドメニューを閉じる」ボタンの位置を整え、直感的に意味を分かりやすくする
+- メニュー開閉の際に文字並びが崩れないようにする
+### UIの改善
+- ポータルメニューやLMS等で表示されるお知らせダイアログのサイズを大きくする
+### 時間割
+- LMSから時間割を保存し、拡張機能ポップアップに週時間割として表示する
+- 拡張機能の週時間割からLMSの授業ページを直接開く
+### オプション
+- ページ右下の「Top」ボタンを非表示にする
+
+## インストール
+### 一般向け
+1. [Releases](https://github.com/saka-naname/Scombetter/releases)から最新の「scombetter_x.x.x.zip」をダウンロードして、適当な場所に解凍する
+2. Google Chromeで [chrome://extensions/](chrome://extensions/) を開く
+3. 右上のトグルでデベロッパー モードを有効にする
+4. 「パッケージ化されていない拡張機能を読み込む」→解凍した「scombetter_x.x.x」フォルダを選択
+5. 一覧に「Scombetter」が表示されれば導入成功です、お疲れさまでした
+
+### 開発者向け
+必要なソフトウェア
+- Git
+- Node.js + npm
+
+手順
+1. コマンドプロンプトやBash等を開き、`git clone https://github.com/saka-naname/Scombetter.git`を実行してリポジトリをクローンする
+2. `cd scombetter`を実行（ダウンロードしたScombetterディレクトリに移動）
+3. `npm install`を実行（依存ライブラリのダウンロード）
+4. `npm run build`を実行（ビルド）
+5. Google Chromeで [chrome://extensions/](chrome://extensions/) を開く
+6. 右上のトグルでデベロッパー モードを有効にする
+7. 「パッケージ化されていない拡張機能を読み込む」→ダウンロードした「Scombetter」フォルダ**内**の「dist」フォルダを選択
+8. 一覧に「Scombetter」が表示されれば導入成功です、お疲れさまでした
+
+ビルド
+- `npm run build:dev` ... 開発用の設定でビルドする
+- `npm run watch` ... ファイルの監視を開始し、ファイルが更新される度に開発用の設定でビルドする
+- `npm run build` ... 本番用の設定でビルドする（`npm run build:prod`も同様）
+
+注意
+ビルドした後は [chrome://extensions/](chrome://extensions/) で拡張機能の更新を行ってください
+
+## 使用上の注意
+このソフトウェアは趣味で開発されたもので、芝浦工業大学 学術情報センター・情報システム課とは何の関係もありません。  
+このソフトウェアは自己責任の上で利用してください。このソフトウェアを使用したことで生じた損害に関して作者は責任を負いません。
+&lt;/pre&gt;</description></item><item><title>[新着リポジトリ] Yuta-KOJIMA-1118/scomb-shibaura-ichiba</title><link>https://github.com/Yuta-KOJIMA-1118/scomb-shibaura-ichiba</link><guid isPermaLink="false">Yuta-KOJIMA-1118/scomb-shibaura-ichiba</guid><pubDate>Tue, 20 Aug 2024 07:57:12 +0000</pubDate><author>Yuta-KOJIMA-1118</author><description>&lt;p&gt;&lt;strong&gt;検知カテゴリ:&lt;/strong&gt; ドメイン検索 (shibaura-it.ac.jp)&lt;/p&gt;&lt;p&gt;&lt;strong&gt;情報:&lt;/strong&gt; 言語: JavaScript | ★ 0&lt;/p&gt;&lt;hr /&gt;&lt;pre style='white-space: pre-wrap; font-family: sans-serif;'&gt;説明なし
+
+--- README ---
+# scomb-shibaura-ichiba
+このアプリケーションは，Chromeの拡張機能である．  
+
+## 機能
+このアプリケーションの機能は，Scombの時間割ページに「クリップボードに時間割情報をコピー」ボタンを追加し，そのボタンを押した後，規約に同意を得たうえでクリップボードに時間割情報をコピーする機能である．  
+芝浦生以外はアクセスできない．
+出力形式は，  
+授業名, 教員名1, 教員名2, ...である．   
+例は，   
+高度情報演習1B, 教員の名前1, 教員の名前2    
+である．これがすべての授業に対して改行されて羅列される．  
+注意として，教員名に休講のようなものが出力されることである．  
+
+## 目的
+芝浦市場の教科書のサジェストにユーザがペーストをすることを目的としている．  
+この機能を使うことで，自分が取っている授業の教科書がサジェストされ，簡単に購入することができる．  
+
+## セキュリティ
+この拡張機能は，https://scombz.shibaura-it.ac.jp/lms/timetable* 上でしか動かない．  
+この拡張機能は，余計な機能を一切積んでいない．  
+この拡張機能は，余計な通信を一切しない．  
+この拡張機能は，芝浦工業大学情報イノベーション科の許可を得て作成されている．  
+
+## 使用方法
+1. ファイルをダウンロードする．
+2. Google Chromeの拡張機能を設定ページへ飛ぶ． (chrome://extensions/)
+3. パッケージ化されていない拡張機能を読み込む で，ダウンロードしたファイルを選択する．
+4. 拡張機能が有効化されていない場合，有効化する．
+5. Scombのlmsタブにとび，右上に表示される青いボタンをクリックする．
+6. 規約に同意する．
+7. 芝浦市場のホームページ（商品一覧ページ）で，&amp;quot;Scomb-Shibura-Ichibaからペースト&amp;quot;と書いてあるテキストボックスにペーストする．
+
+&lt;/pre&gt;</description></item><item><title>[新着リポジトリ] kouheisatou/ScombMobileFlutter</title><link>https://github.com/kouheisatou/ScombMobileFlutter</link><guid isPermaLink="false">kouheisatou/ScombMobileFlutter</guid><pubDate>Mon, 08 Aug 2022 00:49:30 +0000</pubDate><author>kouheisatou</author><description>&lt;p&gt;&lt;strong&gt;検知カテゴリ:&lt;/strong&gt; 大学名キーワード検索 (芝浦工業大学)&lt;/p&gt;&lt;p&gt;&lt;strong&gt;情報:&lt;/strong&gt; 言語: Dart | ★ 37&lt;/p&gt;&lt;hr /&gt;&lt;pre style='white-space: pre-wrap; font-family: sans-serif;'&gt;説明なし
+
+--- README ---
+![](resources/splash.png)
+
+芝浦工業大学の授業管理サイト&amp;quot;ScombZ&amp;quot;のスマホアプリ版。
+&lt;/pre&gt;</description></item><item><title>[新着リポジトリ] hisazumi/programming-in-the-llm-era</title><link>https://github.com/hisazumi/programming-in-the-llm-era</link><guid isPermaLink="false">hisazumi/programming-in-the-llm-era</guid><pubDate>Sun, 21 Jun 2026 13:38:19 +0000</pubDate><author>hisazumi</author><description>&lt;p&gt;&lt;strong&gt;検知カテゴリ:&lt;/strong&gt; 大学名キーワード検索 (芝浦工業大学)&lt;/p&gt;&lt;p&gt;&lt;strong&gt;情報:&lt;/strong&gt; ★ 8&lt;/p&gt;&lt;hr /&gt;&lt;pre style='white-space: pre-wrap; font-family: sans-serif;'&gt;説明なし
+
+--- README ---
+プログラミング言語の学び方を、LLM（大規模言語モデル）時代の前提で整理した講義スライドです。コード生成に頼り切るのではなく、基礎を固めながら、検索やLLMを「補助ツール」として使いこなすための考え方をまとめています。
+
+内容 / Contents
+
+* プログラミングは語学：基礎・インプット/アウトプット・エラーから学ぶ姿勢
+* LLM時代の学び方と、大学で学ぶことの価値
+* 検索の活用（技術用語の選び方、検索演算子、情報源の見極め）
+* LLMとの付き合い方（補助ツールとしての使い方、批判的検証）
+8 LLMからうまく回答を引き出すためのヒント
+
+
+対象 / Audience
+
+* プログラミングを学び始める大学生・初学者、およびそうした学習者を指導する教員を想定しています。
+
+利用方法 / Usage
+
+* スライド本体は 01_HowToLearnProgrammingLanguage.pptx です。CC BY 4.0 の条件下で、講義・勉強会・自習などに自由に利用・改変・再配布できます。改変して使う場合も、下記のクレジット表示をお願いします。
+
+ライセンス / License
+
+* This work is licensed under a Creative Commons Attribution 4.0 International License (CC BY 4.0).
+
+利用の際は以下のクレジットを表示してください。
+
+* 久住憲嗣（芝浦工業大学）「プログラミング言語 学習にあたって」CC BY 4.0
+
+引用 / Citation
+
+久住憲嗣, &amp;quot;プログラミング言語 学習にあたって.&amp;quot;, 芝浦工業大学, 2026, https://github.com/hisazumi/programming-in-the-llm-era
+&lt;/pre&gt;</description></item><item><title>[新着リポジトリ] SIT-DigiCre/student-id-card-read-sample</title><link>https://github.com/SIT-DigiCre/student-id-card-read-sample</link><guid isPermaLink="false">SIT-DigiCre/student-id-card-read-sample</guid><pubDate>Thu, 08 Apr 2021 15:08:15 +0000</pubDate><author>SIT-DigiCre</author><description>&lt;p&gt;&lt;strong&gt;検知カテゴリ:&lt;/strong&gt; 大学名キーワード検索 (芝浦工業大学)&lt;/p&gt;&lt;p&gt;&lt;strong&gt;情報:&lt;/strong&gt; 言語: C | ★ 7&lt;/p&gt;&lt;hr /&gt;&lt;pre style='white-space: pre-wrap; font-family: sans-serif;'&gt;学生証を読み取るサンプルプログラム群です。
+
+--- README ---
+# Student ID Card Read Sample
+
+芝浦工業大学の学生証を読み取るアプリケーションのサンプル群です。
+各言語での実装サンプルが収録されています。
+
+## 動作環境
+C++、C#はWindows 10にRC-S380を接続して動作確認済み。
+
+PythonはArch LinuxにRC-S380を接続して動作確認済み。
+
+## 環境構築
+C++、C#（Windows）で利用する場合は、まず[NFCポートソフトウェア](https://www.sony.co.jp/Products/felica/consumer/download/felicaportsoftware.html)をインストールします。
+
+Python（Linux）で利用する場合は、[nfcpy](https://nfcpy.readthedocs.io/en/latest/topics/get-started.html)をインストールします。
+インストールは `$ pip install nfcpy==1.0.3` で可能です。
+また、pythonディレクトリに移動して `$ pipenv install` をすることで仮想環境にインストールされます。
+root権限なしで実行したい場合、 `$ python -m nfc` を実行して表示される指示に従ってください。
+
+## 依存ライブラリ
+C++、C#は[FeliCa Library](https://ja.osdn.net/projects/felicalib/)を利用しています。
+ライブラリは同梱されています。
+
+Pythonは[nfcpy](https://nfcpy.readthedocs.io/en/latest/topics/get-started.html)を利用しています。
+インストールは環境構築に従って行ってください。
+&lt;/pre&gt;</description></item><item><title>[新着リポジトリ] Kyo-s-s/sit_timetable</title><link>https://github.com/Kyo-s-s/sit_timetable</link><guid isPermaLink="false">Kyo-s-s/sit_timetable</guid><pubDate>Mon, 06 Mar 2023 09:40:43 +0000</pubDate><author>Kyo-s-s</author><description>&lt;p&gt;&lt;strong&gt;検知カテゴリ:&lt;/strong&gt; 大学名キーワード検索 (芝浦工業大学)&lt;/p&gt;&lt;p&gt;&lt;strong&gt;情報:&lt;/strong&gt; 言語: TypeScript | ★ 3&lt;/p&gt;&lt;hr /&gt;&lt;pre style='white-space: pre-wrap; font-family: sans-serif;'&gt;説明なし
+
+--- README ---
+# sit_timetable
+芝浦工業大学の時間割作成補助ツールです。
+
+## Usage
+```
+git clone https://github.com/Kyo-s-s/sit_timetable.git
+cd sit_timetable
+npm install
+npm start
+```
+&lt;/pre&gt;</description></item><item><title>[新着リポジトリ] newt239/sit-bus</title><link>https://github.com/newt239/sit-bus</link><guid isPermaLink="false">newt239/sit-bus</guid><pubDate>Sat, 30 Mar 2024 03:15:48 +0000</pubDate><author>newt239</author><description>&lt;p&gt;&lt;strong&gt;検知カテゴリ:&lt;/strong&gt; 大学名キーワード検索 (芝浦工業大学)&lt;/p&gt;&lt;p&gt;&lt;strong&gt;情報:&lt;/strong&gt; 言語: TypeScript | ★ 5&lt;/p&gt;&lt;hr /&gt;&lt;pre style='white-space: pre-wrap; font-family: sans-serif;'&gt;How many minutes left until the next bus comes?
+
+--- README ---
+芝浦工業大学が東大宮駅・岩槻駅から大宮キャンパス間で運行している学バスの、次のバスが来るまでの時間を表示します。
+
+## 本プロジェクトへの貢献方法
+
+- 不具合を発見した場合は [@newt239](https://twitter.com/newt239) の DM や [Discord サーバー](https://discord.gg/rct5sx6rbZ) 、又は GitHub の Issue で報告してください。
+- 開発者の方からの PR も歓迎します。
+
+## ローカル環境での開発手順
+
+本プロジェクトでは JavaScript ランタイムに [Bun](https://bun.sh) を使用しています。
+
+```bash
+# 依存関係のインストール
+bun install
+
+# 開発サーバーの起動
+bun dev
+```
+
+デフォルトでは 3000 番ポート [http://localhost:3000](http://localhost:3000) でアプリケーションが起動します。
+
+## コードチェック
+
+型チェック・ESLint・Prettier をまとめて実行できます。PR 作成時には GitHub Actions でも同じチェックが走ります。
+
+```bash
+# 型チェック・Lint・フォーマットチェックをまとめて実行
+bun run codecheck
+
+# Lint とフォーマットの自動修正
+bun run lint:fix
+bun run format:fix
+```
+&lt;/pre&gt;</description></item><item><title>[新着リポジトリ] kazu-iroiro/golide</title><link>https://github.com/kazu-iroiro/golide</link><guid isPermaLink="false">kazu-iroiro/golide</guid><pubDate>Tue, 21 Apr 2026 08:23:10 +0000</pubDate><author>kazu-iroiro</author><description>&lt;p&gt;&lt;strong&gt;検知カテゴリ:&lt;/strong&gt; 大学名キーワード検索 (芝浦工業大学)&lt;/p&gt;&lt;p&gt;&lt;strong&gt;情報:&lt;/strong&gt; 言語: HTML | ★ 4&lt;/p&gt;&lt;hr /&gt;&lt;pre style='white-space: pre-wrap; font-family: sans-serif;'&gt;説明なし
+
+--- README ---
+# Golide
+
+芝浦工業大学のデジタル創作サークル「デジクリ」が開発をしている **bolide** の互換クライアント、「Golide」です。
+軽量化・安定性の向上を図っています。
+
+コメントの投稿画面・インフラ部を含めて、全てbolideの資産を利用させていただいております。
+大変感謝申し上げます。
+
+# フォントのライセンス
+
+同封しているフォント『M PLUS 1p』は、『SIL OPEN FONT LICENSE Version 1.1』に基づき利用しています。
+
+『SIL OPEN FONT LICENSE Version 1.1』および『M PLUS 1p』のライセンス表記は、本リポジトリ内の[FontsLicense.md](FontsLicense.md)に記載しています。
+
+## How to Run
+
+### ビルド済みのバイナリを使用する場合
+
+``` sh
+# amd64の場合
+.\golide_windows_amd64.exe
+
+# arm64の場合
+.\golide_windows_arm64.exe
+
+```
+
+### Goを自分でビルドする場合
+
+``` sh
+go build -o main.exe
+```
+
+### Goを実行するだけの場合
+
+``` sh
+go run main.go embeds.go
+```
+
+## 実行時のオプション
+
+``` sh
+.\golide_windows_amd64.exe -h
+```
+
+または
+
+``` sh
+go run main.go embeds.go -h
+```
+
+から閲覧できます。&lt;/pre&gt;</description></item><item><title>[新着リポジトリ] hayabusa2-1998ky26/vidro-board-game</title><link>https://github.com/hayabusa2-1998ky26/vidro-board-game</link><guid isPermaLink="false">hayabusa2-1998ky26/vidro-board-game</guid><pubDate>Thu, 31 Jul 2025 02:42:08 +0000</pubDate><author>hayabusa2-1998ky26</author><description>&lt;p&gt;&lt;strong&gt;検知カテゴリ:&lt;/strong&gt; 大学名キーワード検索 (芝浦工業大学)&lt;/p&gt;&lt;p&gt;&lt;strong&gt;情報:&lt;/strong&gt; 言語: HTML | ★ 2&lt;/p&gt;&lt;hr /&gt;&lt;pre style='white-space: pre-wrap; font-family: sans-serif;'&gt;ビードロ by 芝浦工業大学付属中 ボードゲーム愛好会
+
+--- README ---
+# ビードロ  
+## 概要  
+ビードロとは、2人から4人までで対戦できるボードゲームです。  
+これはそのビードロをRubyで再現したものになります。   
+[プレイ](https://hayabusa2-1998ky26.github.io/vidro-board-game/)   
+
+## プレイ画像  
+![img](/img1.png)
+![img](/img2.png)
+![img](/img3.png)
+
+## クレジット  
+芝浦工業大学付属中学高等学校　思考ゲーム愛好会    
+ゲームデザイン：笠置啓太  
+制作：2022/09/28  
+[愛好会HP](https://sites.google.com/shibaurafzk.com/sikouge-mu/home)  
+&lt;/pre&gt;</description></item><item><title>[新着リポジトリ] EliottFlechtner/Minix2-iAPX86-Compiler</title><link>https://github.com/EliottFlechtner/Minix2-iAPX86-Compiler</link><guid isPermaLink="false">EliottFlechtner/Minix2-iAPX86-Compiler</guid><pubDate>Tue, 16 May 2023 09:13:28 +0000</pubDate><author>EliottFlechtner</author><description>&lt;p&gt;&lt;strong&gt;検知カテゴリ:&lt;/strong&gt; 大学名キーワード検索 (芝浦工業大学)&lt;/p&gt;&lt;p&gt;&lt;strong&gt;情報:&lt;/strong&gt; 言語: C | ★ 2&lt;/p&gt;&lt;hr /&gt;&lt;pre style='white-space: pre-wrap; font-family: sans-serif;'&gt;The project consists of a compiler (interpreter &amp;amp; disassembler) for iAPX86 (8086 16-BIT HMOS Microprocessor) created by Intel in 1978 (first ever x86 microprocessor) supporting x86-16b ASM
+
+--- README ---
+# Minix2-OS (iAPX86) Compiler - Disassembler &amp;amp; Interpreter
+
+## Introduction
+
+Code in C by FLECHTNER Eliott Cyril, see AUTHORS for student ID &amp;amp; email addresses.
+
+The project consists of an interpreter for the Minix2 OS (lexing, parsing, interpretation and execution of 8086 ASM) for **iAPX86** (8086 16-BIT HMOS Microprocessor) created by Intel in 1978 (first ever x86 microprocessor).
+
+Developed in the context of [Advanced OS &amp;amp;amp; Virtualization](http://syllabus.sic.shibaura-it.ac.jp/syllabus/2023/din/138807.html?g=101) class by Instructor [**福田 浩章**](http://resea.shibaura-it.ac.jp/?2830ea708a1eddbb7e8bb6c2a366b751) (FUKUDA Hiroaki) at [**芝浦工業大学**](https://www.shibaura-it.ac.jp/en/) (Shibaura Institute of Technology) in 東京都 (Tōkyō-to, Japan).
+&lt;/pre&gt;</description></item><item><title>[新着リポジトリ] SIT-DigiCre/digichat</title><link>https://github.com/SIT-DigiCre/digichat</link><guid isPermaLink="false">SIT-DigiCre/digichat</guid><pubDate>Sat, 14 Dec 2024 06:00:41 +0000</pubDate><author>SIT-DigiCre</author><description>&lt;p&gt;&lt;strong&gt;検知カテゴリ:&lt;/strong&gt; 大学名キーワード検索 (芝浦工業大学)&lt;/p&gt;&lt;p&gt;&lt;strong&gt;情報:&lt;/strong&gt; 言語: TypeScript | ★ 3&lt;/p&gt;&lt;hr /&gt;&lt;pre style='white-space: pre-wrap; font-family: sans-serif;'&gt;芝浦工業大学デジクリのサークル内SNS
+
+--- README ---
+# digichat
+
+芝浦工業大学デジクリのサークル内SNS「digichat」
+
+## ドキュメント
+
+|                    |                                              |
+| ------------------ | -------------------------------------------- |
+| 環境構築           | [README.md](README.md)                       |
+| 開発ルール         | [docs/CONTRIBUTING.md](docs/CONTRIBUTING.md) |
+| 認証のセットアップ | [docs/AUTH_SETUP.md](docs/AUTH_SETUP.md)     |
+| ADR                | [docs/ADR.md](docs/ADR.md)                   |
+| Prismaの操作方法   | [prisma/README.md](prisma/README.md)         |
+| データベース設計   | [prisma/ERD.md](prisma/ERD.md)               |
+
+## 環境構築の手順
+
+### .envの用意
+
+`.env.example`をベースに`.env`を用意する。
+
+```bash
+cp .env.sample .env
+```
+
+### VSCodeでDevContainerを使用する場合
+
+画面左下の青いところをクリック。
+![](docs/images/readme-1.png)
+
+その後、`コンテナーで開く`を選択。しばらく待つとDevContainerが自動で立ち上がる。以降、コマンドはDevContainer内で実行すること。
+
+### 依存関係のインストール
+
+pnpmでインストールをする
+
+```bash
+pnpm install
+```
+
+### マイグレーション
+
+データベースのマイグレーションを行う
+
+```bash
+pnpm prisma migrate dev
+```
+
+### seedデータの適用
+
+マイグレーションが終わったらseedデータを適用する。
+
+```bash
+pnpm seed
+```
+
+詳細は `prisma/README.md` を参照。
+
+### 開発サーバーの起動
+
+devを実行することでサイトが表示される。
+
+```bash
+pnpm dev
+```
+
+実行後、`localhost:3000`で開発サーバーが起動する。`0.0.0.0:3000`だとGoogleのOAuth認証ができないので注意。
+
+## 使用しているライブラリ
+
+- TypeScript
+- Next.js App Router
+- Mantine
+- ESLint
+- Prettier
+- Stylelint
+&lt;/pre&gt;</description></item><item><title>[新着リポジトリ] amgm-087ff5/pads</title><link>https://github.com/amgm-087ff5/pads</link><guid isPermaLink="false">amgm-087ff5/pads</guid><pubDate>Thu, 18 May 2023 08:27:54 +0000</pubDate><author>amgm-087ff5</author><description>&lt;p&gt;&lt;strong&gt;検知カテゴリ:&lt;/strong&gt; 大学名キーワード検索 (芝浦工業大学)&lt;/p&gt;&lt;p&gt;&lt;strong&gt;情報:&lt;/strong&gt; 言語: Java | ★ 0&lt;/p&gt;&lt;hr /&gt;&lt;pre style='white-space: pre-wrap; font-family: sans-serif;'&gt;説明なし
+
+--- README ---
+# PaDS (Purchase and Delivery System)
+
+・データベース名
+	pads
+
+### Run UserApp
+```PowerShell
+$ cd C:\Users\masam\OneDrive\Documents\MyDocuments\Documents\学校\芝浦工業大学\授業\3学年\前期\プロジェクト演習12\pads;
+	javac -d ./class -sourcepath ./src -encoding utf-8 ./src/UserApp.java;
+	java -cp &amp;quot;C:/Program Files/MySQL/mysql-connector-j-8.0.33/mysql-connector-j-8.0.33.jar;./class&amp;quot; UserApp;
+```
+
+### Run DeliveryMemberApp
+```powershell
+$ cd C:\Users\masam\OneDrive\Documents\MyDocuments\Documents\学校\芝浦工業大学\授業\3学年\前期\プロジェクト演習12\pads;
+	javac -d ./class -sourcepath ./src -encoding utf-8 ./src/DeliveryMemberApp.java;
+	java -cp &amp;quot;C:/Program Files/MySQL/mysql-connector-j-8.0.33/mysql-connector-j-8.0.33.jar;./class&amp;quot; DeliveryMemberApp;
+```
+
+### Run DeliveryMemberConductorApp
+```powershell
+$ cd C:\Users\masam\OneDrive\Documents\MyDocuments\Documents\学校\芝浦工業大学\授業\3学年\前期\プロジェクト演習12\pads;
+	javac -d ./class -sourcepath ./src -encoding utf-8 ./src/DeliveryMemberConductorApp.java;
+	java -cp &amp;quot;C:/Program Files/MySQL/mysql-connector-j-8.0.33/mysql-connector-j-8.0.33.jar;./class&amp;quot; DeliveryMemberConductorApp;
+```
+
+VSCodeでの .md のプレビューは「Ctrl + Shift + V」&lt;/pre&gt;</description></item><item><title>[新着リポジトリ] kazu-iroiro/sit-sitrus-coordinator</title><link>https://github.com/kazu-iroiro/sit-sitrus-coordinator</link><guid isPermaLink="false">kazu-iroiro/sit-sitrus-coordinator</guid><pubDate>Tue, 31 Mar 2026 15:10:50 +0000</pubDate><author>kazu-iroiro</author><description>&lt;p&gt;&lt;strong&gt;検知カテゴリ:&lt;/strong&gt; 大学名キーワード検索 (芝浦工業大学)&lt;/p&gt;&lt;p&gt;&lt;strong&gt;情報:&lt;/strong&gt; 言語: JavaScript | ★ 5&lt;/p&gt;&lt;hr /&gt;&lt;pre style='white-space: pre-wrap; font-family: sans-serif;'&gt;芝浦工業大学の履修管理ポータルサイト「SITRUS」のUIをリッチにするためのChrome拡張機能です。
+
+--- README ---
+# SITRUS Coordinator
+
+芝浦工業大学の履修管理ポータルサイト、SITRUSのUIをリッチにするためのChrome拡張機能です。
+
+拡張機能の公式サイト: https://coord.iroirolink.com/
+
+**本拡張機能は芝浦工業大学が関与していない、個人が開発した拡張機能です。** 
+
+&amp;gt; [!IMPORTANT]
+&amp;gt; v1.0.2より、時間割画面において抽選科目の定員数を表示する機能を追加しました。画面上部のヘッダーに、機能を有効化するためのチェックボックスを設置しています。本機能有効化時はSITRUS固有の表描画スクリプトを置き換えるため、正常に動作しない場合は **必ず** 機能の無効化を行ってください。
+
+# How To Run - 動かし方
+
+0. このREADME.mdに記載されているライセンスに同意します
+
+1. このリポジトリをクローンします
+
+&amp;gt; [!NOTE]
+&amp;gt; [GitHubのRelease](https://github.com/kazu-iroiro/sit-sitrus-coordinator/releases/latest)からZIPファイルをダウンロードすることもできます
+
+2. [Chromeの拡張機能設定](chrome://extensions/)を開きます。
+
+3. 画面右上のトグルボタンを操作し、デベロッパーモードをオンにしてください。
+
+4. 「パッケージ化されていない拡張機能を読み込む」をクリックし、1でローカルに落としてきたフォルダを指定します
+
+5. SITRUSのページを開いてみましょう
+
+6. UIが変わっていたら導入完了です
+
+# ライセンス
+
+最終更新日：2026年4月8日
+
+本ソフトウェアを利用することにより、本規約に同意したものとします。
+
+## 注意事項
+
+本拡張機能は大学が公式にリリースしているものではなく、個人が開発・運用している独立したプロジェクトとなります。
+
+ご注意ください。
+
+## 無償利用と通信料
+本ソフトウェアの使用、複製、改変、再配布を無償で許可します。
+
+改変・再配布時には、本ライセンスの『[改変および再配布](#改変および再配布)』を順守するものとします。
+
+本リポジトリのダウンロードおよび利用に際して必要となるインターネットの通信料は、ユーザーの負担とします。
+
+## 著作権
+
+このリポジトリに含まれるプログラムおよび画像の著作権は、開発者である kazu_iroiro に帰属します。
+
+拡張機能実行時にGoogle Fonts経由でダウンロードされるフォント『BIZ UDPGothic』は、『SIL OPEN FONT LICENSE Version 1.1』に基づき利用しています。
+
+『SIL OPEN FONT LICENSE Version 1.1』および『BIZ UDPGothic』のライセンス表記は、本リポジトリ内の[FontsLicense.md](FontsLicense.md)に記載しています。
+
+## 改変および再配布
+
+コードの改変やプルリクエストは大歓迎です。
+
+ただし、再配布する場合は、本リポジトリとは別プロジェクトであることを明確に示し、名称・説明・ドキュメント等において混同を招かないようにしてください。
+
+再配布物には、本リポジトリのURLおよび著作権表示を含めるものとします。
+
+任意ですが、再配布時には、開発者が抱いている以下のポリシーにできるだけ賛同・順守いただきたいです。
+
+1. 拡張機能の開発行為を通して、大学や既存システムに対する批判を行わないよう配慮すること。
+
+2. 履修登録という学生にとって極めて重要な意思決定に関わる領域であるからこそ、透明性・検証可能性の観点から、オープンソースで公開すること。
+
+3. 派生作品については、その品質・挙動・安全性を含めて元プロジェクトの開発者は責任を負うことはできないこと。したがって、各プロジェクトのユーザーに対して、責任範囲や成り立ちが誤解なく伝わる状態を保つこと。
+
+## 免責事項
+
+本ソフトウェアは現状有姿で提供されます。
+開発者は、本ソフトウェアの利用または利用不能により生じた、履修登録の不備を含むいかなる損害についても、一切の責任を負いません。
+
+履修登録の最終確認など重要な操作を行う際は、念のため拡張機能を無効化した上でご確認いただくことを強く推奨いたします。
+
+## ライセンスの変更
+
+本ライセンスは、今後の運用状況に応じて適宜更新される可能性があります。
+
+変更後のライセンスは、変更後に取得または更新された本ソフトウェアに適用されます。
+
+本ライセンスの更新前のコミットを利用する場合であっても、当該コミットを本ライセンスの更新後に新たに取得した場合には、その取得時点での最新のライセンスが適用されます。
+
+## 情報提供
+
+本拡張機能のアップデートおよび重要な情報は、開発者の各種 SNS でお知らせします。定期的にご確認ください。
+
+## リポジトリの削除について
+
+大学からの要請など、やむを得ない事情によりリポジトリの公開停止またはプログラムの修正が行われる可能性があります。その場合、ユーザーは速やかに拡張機能を更新または無効化してください。
+
+## プライバシーポリシー
+
+本拡張機能は安全性の確保、および軽量化のため、アクセス解析やクラッシュ情報を含め、一切の個人情報の収集および送信を行っておりません。
+
+バグや不具合がございましたら、kazu_iroiro までお問い合わせください。
+
+## ライセンスの更新履歴
+
+初版:  2026年4月1日
+第2版: 2026年4月8日&lt;/pre&gt;</description></item><item><title>[新着リポジトリ] haut-norima/Scombz_widgets</title><link>https://github.com/haut-norima/Scombz_widgets</link><guid isPermaLink="false">haut-norima/Scombz_widgets</guid><pubDate>Mon, 20 Apr 2026 06:58:44 +0000</pubDate><author>haut-norima</author><description>&lt;p&gt;&lt;strong&gt;検知カテゴリ:&lt;/strong&gt; 大学名キーワード検索 (芝浦工業大学)&lt;/p&gt;&lt;p&gt;&lt;strong&gt;情報:&lt;/strong&gt; 言語: Kotlin | ★ 1&lt;/p&gt;&lt;hr /&gt;&lt;pre style='white-space: pre-wrap; font-family: sans-serif;'&gt;芝浦工業大学ScombZのウィジェット付きクライアント
+
+--- README ---
+# ScombZ Widgets
+
+**ScombZ Widgets** は、芝浦工業大学の学習管理システム [ScombZ](https://scombz.shibaura-it.ac.jp/) の情報をAndroidのホーム画面ウィジェットで確認できるアプリです。
+
+時間割・課題・バス時刻を一目で把握できます。
+
+---
+
+## 機能
+
+### ウィジェット
+
+| ウィジェット | 内容 |
+|------------|------|
+| 📅 **時間割** | 今日の授業を時限順に表示。現在進行中・次の授業をハイライト表示 |
+| 📋 **課題** | 未提出課題を期限の近い順に表示。期限に応じた色分けで緊急度を視覚化 |
+| 🚌 **バス時刻** | 大宮キャンパス周辺の次発バス（駅→学校・学校→駅）を表示 |
+
+### アプリ画面
+
+- **時間割タブ**: 曜日・時限ごとに授業を一覧表示
+- **課題タブ**: ScombZ課題 + エクストラ課題をマージして表示
+- **エクストラ課題タブ**: ScombZ外での課題提出をサポートする手動登録機能
+
+### エクストラ課題
+
+ScombZに登録されていない外部課題を手動でスケジュール登録できます。  
+毎週指定した曜日・時刻になると**自動で課題として表示**され、期限を過ぎると自動で消えます。
+
+
+### 自動更新
+
+| 種類 | 頻度 | 内容 |
+|------|------|------|
+| 表示更新 | 1分ごと | 残り時間・次のバス・現在授業など |
+| データ同期 | 1時間ごと | ScombZサーバーから時間割・課題を取得 |
+| バスデータ | 15分ごと | バス時刻表サーバーから取得 |
+
+---
+
+## 動作環境
+
+- **Android 12 以降** (API 31+)
+- ScombZ のアカウント（芝浦工業大学の学生・教職員）
+
+---
+
+## セットアップ
+
+1. APKをインストール
+2. アプリを起動し、「ログイン」からScombZにサインイン
+3. ホーム画面のウィジェット追加から好きなウィジェットを配置
+
+&amp;gt; **注意**: Android 12+ では、正確なアラームの使用許可を求める場合があります。ウィジェットの1分更新を有効にするため、許可してください。
+
+---
+
+## 技術スタック
+
+| カテゴリ | ライブラリ |
+|---------|-----------|
+| UI | Jetpack Compose, Material3 |
+| ウィジェット | Glance AppWidget 1.1.1 |
+| バックグラウンド処理 | WorkManager 2.10.0 |
+| 時刻管理 | AlarmManager (`setExactAndAllowWhileIdle`) |
+| 永続化 | DataStore Preferences, SharedPreferences |
+| ネットワーク | OkHttp 4.12.0 |
+| HTML解析 | JSoup 1.18.1 |
+| JSON解析 | Gson 2.11.0 |
+| 非同期 | Kotlin Coroutines 1.8.1 |
+
+---
+
+## アーキテクチャ
+
+```
+MainActivity (Compose UI / 3タブ)
+│
+├── ScombzRepository          ← ScombZサーバーとのやり取り、ローカルキャッシュ
+├── ExtraAssignmentRepository ← エクストラ課題スケジュールの管理
+├── BusRepository             ← バスデータのキャッシュ管理
+│
+├── DataSyncWorker (WorkManager) ← 1時間ごとのバックグラウンド同期
+│
+└── WidgetUpdateScheduler (AlarmManager) ← 1分ごとのUI再描画
+    └── WidgetUpdateReceiver
+        ├── TimetableWidget
+        ├── AssignmentWidget  ← ScombZ課題 + エクストラ課題をマージ表示
+        └── BusWidget
+```
+
+---
+
+## ビルド
+
+```bash
+# デバッグビルド
+./gradlew assembleDebug
+
+# リリースビルド
+./gradlew assembleRelease
+```
+
+---
+
+## ライセンス
+
+このアプリは芝浦工業大学の学生向けに作成された非公式ツールです。  
+ScombZ は芝浦工業大学が提供するサービスです。本アプリとの公式な関係はありません。
+&lt;/pre&gt;</description></item><item><title>[新着リポジトリ] TakashiIjiri/SpinTracker_Python</title><link>https://github.com/TakashiIjiri/SpinTracker_Python</link><guid isPermaLink="false">TakashiIjiri/SpinTracker_Python</guid><pubDate>Mon, 29 Mar 2021 12:18:10 +0000</pubDate><author>TakashiIjiri</author><description>&lt;p&gt;&lt;strong&gt;検知カテゴリ:&lt;/strong&gt; 大学名キーワード検索 (芝浦工業大学)&lt;/p&gt;&lt;p&gt;&lt;strong&gt;情報:&lt;/strong&gt; 言語: Python | ★ 8&lt;/p&gt;&lt;hr /&gt;&lt;pre style='white-space: pre-wrap; font-family: sans-serif;'&gt;Tool for estimating baseball spin speed (RPS, Revolution per second) and spin axis from high speed video.
+
+--- README ---
+日本語の説明は下にあります．
+
+# SpinTracker_Python
+SpinTracker is an application that estimates the spin speed and spin axis of a pitched baseball from a highspeed video. Detailed information This application is a Python implementation of the method described in the following paper.
+
+- Takashi Ijiri, Atsushi Nakamura, Akira Hirabayashi, Wataru Sakai, Takeshi Miyazaki, Ryutaro Himeno, Automatic spin measurements for pitched Baseballs via consumer-grade high-speed cameras, SIViP (2017). doi:10.1007/s11760-017-1075-x.  
+
+This code is for research use only. Contact me (takashi.ijiri80 AT gmail.com) if you would like to use this for commercial use.   
+
+
+## Required library  
+  - pyOpenGL   : install this by &amp;quot;$pip install pyOpenGL&amp;quot;
+  - glfw       : install this by &amp;quot;$pip install glfw&amp;quot;
+  - OpenCV     : install this by &amp;quot;$pip install opencv-python&amp;quot;
+  - matplotlib : install this by &amp;quot;$pip install matplotlib&amp;quot;
+  - Pillow     : install this by &amp;quot;$pip install Pillow&amp;quot;
+  - scipy      : install this by &amp;quot;$pip install scipy&amp;quot;
+Each library can be installed by executing the command &amp;quot;$pip install [library name]&amp;quot; on a command prompt. numpy is also required, but it should be installed automatically during the installation of the above libraries. The application was tested by using the following environment;
+Windows 10 / Python 3.8.5 / glfw 2.0.0 / matplotlib 3.3.3 / numpy 1.19.3 / opencv-python 4.4.0.46 / Pillow 8.0.1 / PyOpenGL 3.1.5 / scipy 1.5.4.
+
+## How to start  
+Double-click on SpinTracker.bat in the top folder.  
+Alternatively, open a command prompt and type &amp;quot;$python src/SpinTracker.py . /sample&amp;quot;. 
+
+## How to use
+![img](./imgs/mainwindow.png)
+
+#### 1. Specify a High-Speed Video file (mp4)
+- When starting SpinTracker, a video file selection dialog will appear.
+- You can seek the video by the scroll bar **(i)** in the dialog or **left/right keys**.
+- You can drag the video by **mouse-left-dragging** and zoom by **mouse-middle-dragging**.
+- Multiple sample videos are available in &amp;quot;./sample&amp;quot;.
+
+#### 2. Specify ROI  (Yellow Rectangle)
+- After selecting the video, MainWindow and Parameter Dialog will appear.
+- Specify an ROI (region of interest, yellow rectangle) that the ball passes through in the MainWindow by **shift-key + mouse-left-dragging**.
+- The smaller ROI, the faster and more accurate the calculation will be.
+
+#### 3. Specify Ball Radius 
+- Specify the radius of the ball at release and catch by using the spin control **(l)** in the dialog.
+- You can drag the zoom window (pink rectangle) by **space-key + mouse-left-drag** in MainWindow.
+- If you align this zoom window with the ball at release (or catch), this rectangle will be magnified in **(b)**. Use this magnified view, to specify the ball radius.
+
+#### 4. Specify the mask
+- When shooting video under sunlight, the upper side of the ball may be blown out (overexposed). A mask is used to avoid using this area for calculation. 
+- Use the dialog **(n)** to specify the direction and size of the mask.
+- The mask will be visualized in **(e)**.
+
+#### 5. Set other parameters
+- From the dialog, you can specify the background image generation method and threshold **(m)**, the size of the Morphological Operation after extracting the foreground region **(o)**, and the frame interval for template matching **(o)**. 
+
+#### 6. Save parameters (optional)
+- The parameters set above can be saved as a config file and reused when analyzing other videos by using the buttons **(p)**.
+
+#### 7. Estimation of spin speed and axis
+- Press the &amp;quot;Run Tracking And Spin Analysis&amp;quot; button to track the ball and estimate its rotation (it will take several tens of seconds).
+- The analysis results will be displayed in the dialog **(i)** and MainWindow **(h)**.　
+
+
+Takashi Ijiri
+
+
+
+# SpinTracker_Python (日本語)
+SpinTrackerは、野球の投球動画からボールの回転速度と回転軸を推定するアプリケーションです。
+このアプリケーションは、以下の論文の手法をPythonで実装したものです。
+- Takashi Ijiri, Atsushi Nakamura, Akira Hirabayashi, Wataru Sakai, Takeshi Miyazaki, Ryutaro Himeno, Automatic spin measurements for pitched Baseballs via consumer-grade high-speed cameras, SIViP (2017). doi:10.1007/s11760-017-1075-x.  
+
+このプログラムは、研究利用のために公開しています。
+商用利用を検討される場合(takashi.ijiri80 AT gmail.com)までご連絡ください。
+オリジナルのアプリケーションはC++にて実装されています。
+
+## 必要なライブラリ 
+  - pyOpenGL   : &amp;quot;$pip install pyOpenGL&amp;quot;  
+  - glfw       : &amp;quot;$pip install glfw&amp;quot;  
+  - OpenCV     : &amp;quot;$pip install opencv-python&amp;quot;  
+  - matplotlib : &amp;quot;$pip install matplotlib&amp;quot;  
+  - Pillow     : &amp;quot;$pip install Pillow&amp;quot;  
+  - scipy      : &amp;quot;$pip install scipy&amp;quot;  
+各ライブラリはコマンドプロンプトを開き、&amp;quot;$pip install ライブラリ名&amp;quot;コマンドを実行することでインストール可能です．numpyも必要ですが、上記ライブラリのインストール中に自動でインストールされるはずです。 以下の環境で動作確認済みです。
+Windows 10 / Python 3.8.5 / glfw 2.0.0 / matplotlib 3.3.3 / numpy 1.19.3 / opencv-python 4.4.0.46 / Pillow 8.0.1 / PyOpenGL 3.1.5 / scipy 1.5.4
+
+
+## 実行方法
+一番上のフォルダ内のSpinTracker.batをダブルクリックしてください。  
+または、コマンドプロンプトを開き&amp;quot;$python src/SpinTracker.py ./sample&amp;quot;と打ち込んでください．    
+
+
+## 利用方法
+![img](./imgs/mainwindow.png)
+
+#### 1. 高速度動画(mp4)の指定
+- SpinTrackerを起動するとまず動画選択ダイアログが現れるので動画ファイルを指定してください。
+- Sony RXシリーズで撮影した480 FPS または 960 FPSで撮影された動画でテストをしています。
+- ./sampleフォルダに複数のサンプル動画があります。
+- MainWindow内では **左ドラッグ** により画面を移動できます。
+- ダイアログの**i** や、**左右キー**により動画をシークできます。
+
+#### 2. Roi Rectangleの指定
+- 動画選択後、MainWindowとParameter Dialogが現れます。
+- MainWindow内で、ボールが通る矩形領域(RoiRectangle、黄色矩形)を、**shift + 左ドラッグ** により指定してください。
+- 矩形領域のみで計算をするため、矩形領域が小さいと高速かつ高精度になります。
+
+#### 3. Ball半径の指定
+- リリース時、捕球時のボール半径を指定します。
+- MainWindow内で**spaceキー + 左ドラッグ**するとzoom window (ピンク色矩形)をドラッグできます。
+- この矩形をリリース時・捕球時のボールに合わせてください。この矩形領域が **(b)** に拡大表示されます。
+- この拡大表示を確認しながら、ダイアログ　**(l)** よりボール半径を指定してください。
+
+#### 4. マスクの指定
+- 野外の撮影では、ボールの上側が白飛びすることがあります。この部分を計算に利用しないよう、マスクを指定します。
+- ダイアログ **(n)** よりマスクする方向とサイズを指定してください。
+- マスクは **(e)** に可視化されます。
+
+#### 5. その他各種パラメタの設定
+- ダイアログより、背景画像生成方法と閾値 **(m)**、前景領域抽出後のMorphological Operationのサイズ **(o)** 、テンプレートマッチングを行うフレーム間隔 **(o)** を指定可能です。
+
+#### 6. パラメータのセーブ （任意）
+- 上記の通り設定したパラメータはconfigファイルとしてセーブし、他の動画の解析時に再利用可能です **(p)**．
+
+#### 7. 回転速度・回転軸の推定
+- 最後に&amp;quot;Run Tracking And Spin Analysis&amp;quot;ボタンを押すと、ボールの追跡と回転解析が行われます（数十秒かかります）。
+- 解析結果は、ダイアログ **(i)** と MainWindow **(h)**に表示されます。　
+
+
+
+井尻敬 (芝浦工業大学)
+&lt;/pre&gt;</description></item><item><title>[新着リポジトリ] dake-tte-yomenai/cloth-defect</title><link>https://github.com/dake-tte-yomenai/cloth-defect</link><guid isPermaLink="false">dake-tte-yomenai/cloth-defect</guid><pubDate>Tue, 21 Oct 2025 05:30:01 +0000</pubDate><author>dake-tte-yomenai</author><description>&lt;p&gt;&lt;strong&gt;検知カテゴリ:&lt;/strong&gt; 大学名キーワード検索 (芝浦工業大学)&lt;/p&gt;&lt;p&gt;&lt;strong&gt;情報:&lt;/strong&gt; ★ 0&lt;/p&gt;&lt;hr /&gt;&lt;pre style='white-space: pre-wrap; font-family: sans-serif;'&gt;芝浦工業大学安村研究室での研究
+
+--- README ---
+# cloth-defect
+芝浦工業大学安村研究室での研究
+&lt;/pre&gt;</description></item><item><title>[新着リポジトリ] MizukiCho0723/Shibaura-Network-Service</title><link>https://github.com/MizukiCho0723/Shibaura-Network-Service</link><guid isPermaLink="false">MizukiCho0723/Shibaura-Network-Service</guid><pubDate>Sun, 07 Jun 2026 23:24:57 +0000</pubDate><author>MizukiCho0723</author><description>&lt;p&gt;&lt;strong&gt;検知カテゴリ:&lt;/strong&gt; 大学名キーワード検索 (芝浦工業大学)&lt;/p&gt;&lt;p&gt;&lt;strong&gt;情報:&lt;/strong&gt; ★ 0&lt;/p&gt;&lt;hr /&gt;&lt;pre style='white-space: pre-wrap; font-family: sans-serif;'&gt;芝浦工業大学生・教員・職員専用のSNS
+
+--- README ---
+# Shibaura-Network-Service
+芝浦工業大学生・教員・職員専用のSNS
+&lt;/pre&gt;</description></item><item><title>[新着リポジトリ] Doppon/InformationProcessing2A</title><link>https://github.com/Doppon/InformationProcessing2A</link><guid isPermaLink="false">Doppon/InformationProcessing2A</guid><pubDate>Wed, 29 Nov 2017 03:05:07 +0000</pubDate><author>Doppon</author><description>&lt;p&gt;&lt;strong&gt;検知カテゴリ:&lt;/strong&gt; 大学名キーワード検索 (芝浦工業大学)&lt;/p&gt;&lt;p&gt;&lt;strong&gt;情報:&lt;/strong&gt; 言語: C | ★ 0&lt;/p&gt;&lt;hr /&gt;&lt;pre style='white-space: pre-wrap; font-family: sans-serif;'&gt;芝浦工業大学の情報処理演習2Aの内容
+
+--- README ---
+# InformationProcessing2A
+芝浦工業大学の情報処理演習の内容です。
+&lt;/pre&gt;</description></item><item><title>[新着リポジトリ] Y-Yamamoto0/resucue_robot_conpetition_2023</title><link>https://github.com/Y-Yamamoto0/resucue_robot_conpetition_2023</link><guid isPermaLink="false">Y-Yamamoto0/resucue_robot_conpetition_2023</guid><pubDate>Fri, 12 May 2023 04:48:13 +0000</pubDate><author>Y-Yamamoto0</author><description>&lt;p&gt;&lt;strong&gt;検知カテゴリ:&lt;/strong&gt; 大学名キーワード検索 (芝浦工業大学)&lt;/p&gt;&lt;p&gt;&lt;strong&gt;情報:&lt;/strong&gt; ★ 0&lt;/p&gt;&lt;hr /&gt;&lt;pre style='white-space: pre-wrap; font-family: sans-serif;'&gt;芝浦工業大学レスキューロボットコンテスト2023用の開発ソースコードリポジトリ
+
+--- README ---
+# resucue_robot_conpetition_2023
+芝浦工業大学レスキューロボットコンテスト2023用の開発ソースコードリポジトリ
+&lt;/pre&gt;</description></item><item><title>[新着リポジトリ] MizukiCho0723/-nss-hp-chatbot</title><link>https://github.com/MizukiCho0723/-nss-hp-chatbot</link><guid isPermaLink="false">MizukiCho0723/-nss-hp-chatbot</guid><pubDate>Sun, 07 Jun 2026 20:18:54 +0000</pubDate><author>MizukiCho0723</author><description>&lt;p&gt;&lt;strong&gt;検知カテゴリ:&lt;/strong&gt; 大学名キーワード検索 (芝浦工業大学)&lt;/p&gt;&lt;p&gt;&lt;strong&gt;情報:&lt;/strong&gt; ★ 0&lt;/p&gt;&lt;hr /&gt;&lt;pre style='white-space: pre-wrap; font-family: sans-serif;'&gt;芝浦工業大学 学術情報センターのホームページのチャットボットを作成しました。
+
+--- README ---
+# -nss-hp-chatbot
+芝浦工業大学 学術情報センターのホームページのチャットボットを作成しました。
+&lt;/pre&gt;</description></item><item><title>[新着リポジトリ] Kotetsu0000/Den3BlogTool</title><link>https://github.com/Kotetsu0000/Den3BlogTool</link><guid isPermaLink="false">Kotetsu0000/Den3BlogTool</guid><pubDate>Sun, 05 Apr 2020 15:08:53 +0000</pubDate><author>Kotetsu0000</author><description>&lt;p&gt;&lt;strong&gt;検知カテゴリ:&lt;/strong&gt; 大学名キーワード検索 (芝浦工業大学)&lt;/p&gt;&lt;p&gt;&lt;strong&gt;情報:&lt;/strong&gt; 言語: C++ | ★ 0&lt;/p&gt;&lt;hr /&gt;&lt;pre style='white-space: pre-wrap; font-family: sans-serif;'&gt;芝浦工業大学公認サークル電子計算機研究会ブログ作成用の簡易GUIソフトです。
+
+--- README ---
+# Den3BlogTool
+芝浦工業大学公認サークル電子計算機研究会ブログ作成用の簡易GUIソフトです。
+
+このプログラムはQtで作成されています。&lt;/pre&gt;</description></item><item><title>[新着リポジトリ] itouyukiko2028/hello-world</title><link>https://github.com/itouyukiko2028/hello-world</link><guid isPermaLink="false">itouyukiko2028/hello-world</guid><pubDate>Wed, 08 Jul 2026 08:35:19 +0000</pubDate><author>itouyukiko2028</author><description>&lt;p&gt;&lt;strong&gt;検知カテゴリ:&lt;/strong&gt; 大学名キーワード検索 (芝浦工業大学)&lt;/p&gt;&lt;p&gt;&lt;strong&gt;情報:&lt;/strong&gt; ★ 0&lt;/p&gt;&lt;hr /&gt;&lt;pre style='white-space: pre-wrap; font-family: sans-serif;'&gt;このリポジトリは GitHub Flow を実行するためのリポジトリです
+
+--- README ---
+# hello-world
+このリポジトリは GitHub Flow を実行するためのリポジトリです
+
+芝浦工業大学大学院理工学研究科システム理工学専攻修士一年の伊藤結希子です。
+&lt;/pre&gt;</description></item><item><title>[新着リポジトリ] KataokaNagi/digicredigico</title><link>https://github.com/KataokaNagi/digicredigico</link><guid isPermaLink="false">KataokaNagi/digicredigico</guid><pubDate>Sat, 06 Mar 2021 05:37:14 +0000</pubDate><author>KataokaNagi</author><description>&lt;p&gt;&lt;strong&gt;検知カテゴリ:&lt;/strong&gt; 大学名キーワード検索 (芝浦工業大学)&lt;/p&gt;&lt;p&gt;&lt;strong&gt;情報:&lt;/strong&gt; 言語: HTML | ★ 0&lt;/p&gt;&lt;hr /&gt;&lt;pre style='white-space: pre-wrap; font-family: sans-serif;'&gt;Joking introduction websites of my club invitation page
+
+--- README ---
+# digicredigico
+Joking introduction websites.  
+This is made for my club invitation page &amp;amp; &amp;quot;Kuso-Dasa-Grand-Prix&amp;quot;
+
+## Site Link
+[デジクリ デジコのホームページ](https://kataokanagi.github.io/digicredigico/index.html)
+
+[![image](https://user-images.githubusercontent.com/45355440/110201645-84591180-7ea7-11eb-8e9a-637e5b70f948.png)](https://kataokanagi.github.io/digicredigico/index.html)
+
+## License
+Don’ｔ reuse source files.
+
+## Acknowledgements
+I would like to thank their authers.  
+
+* [阿部 寛のホームページ](http://abehiroshi.la.coocan.jp/)
+* [阿部寛と学ぶHTMLチュートリアル](https://qiita.com/Michinosuke/items/ff696189ecd518da3d3a)
+* [芝浦工業大学公認サークルデジクリのホームページ](https://www.google.com/url?sa=t&amp;amp;rct=j&amp;amp;q=&amp;amp;esrc=s&amp;amp;source=web&amp;amp;cd=&amp;amp;cad=rja&amp;amp;uact=8&amp;amp;ved=2ahUKEwjM8J_H-prvAhWJdXAKHQevBHwQFjAAegQIAhAD&amp;amp;url=https%3A%2F%2Fdigicre.net%2F&amp;amp;usg=AOvVaw3lTku9wOD23g0417nXcDiZ)
+&lt;/pre&gt;</description></item></channel></rss>
