@@ -1,0 +1,37 @@
+feed:
+  title: "SIT Patrol (芝浦工業大学 関連リポジトリ)"
+  description: "芝浦工業大学に関連する新規公開GitHubリポジトリ（OSS）の自動検知フィード"
+  link: "https://github.com/2gn/sit-patrol"
+  max_items: 50
+
+# フィルタリング設定
+filters:
+  # プライベートリポジトリを完全除外 (PATでアクセス可能な自分や組織の非公開レポを遮断)
+  ignore_private: true
+
+  # 特定のオーナー（ユーザー名 / 組織名）を監視対象から除外（必要に応じて追加）
+  exclude_owners: []
+
+  # 特定のリポジトリを除外
+  exclude_repos: []
+
+# 検索クエリ一覧 (GitHub Search Repositories API)
+# is:public により、パブリックリポジトリのみを検索対象とします
+queries:
+  - id: "domain-search"
+    name: "ドメイン検索 (shibaura-it.ac.jp)"
+    query: "is:public shibaura-it.ac.jp in:name,description,readme"
+    sort: "created"
+    order: "desc"
+
+  - id: "keyword-kanji"
+    name: "大学名キーワード検索 (芝浦工業大学)"
+    query: 'is:public "芝浦工業大学" in:name,description,readme'
+    sort: "created"
+    order: "desc"
+
+  - id: "keyword-slug"
+    name: "識別子キーワード検索 (shibaura-it)"
+    query: 'is:public "shibaura-it" in:name,description'
+    sort: "created"
+    order: "desc"

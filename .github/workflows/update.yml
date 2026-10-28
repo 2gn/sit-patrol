@@ -1,0 +1,53 @@
+name: Update Patrol Feed
+
+on:
+  schedule:
+    - cron: '0 */3 * * *'  # 3時間おきに実行
+  workflow_dispatch:        # GitHub CLI や Web UI からの手動実行
+
+jobs:
+  patrol:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout main branch (code)
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Checkout data branch (state storage)
+        uses: actions/checkout@v4
+        with:
+          ref: data
+          path: data_store
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+
+      - name: Run SIT Patrol Tracker
+        env:
+          GH_PAT: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+        run: |
+          python -m src.tracker --config config.yml --data-dir data_store
+
+      - name: Commit and push changes to data branch
+        working-directory: data_store
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          if [ -n "$(git status --porcelain)" ]; then
+            git add index.json rss.xml
+            git commit -m "chore(data): update patrol feed [skip ci]"
+            git push origin data
+          else
+            echo "No changes in feed index."
+          fi
